@@ -26,39 +26,39 @@ export const Navbar = () => {
           <button className="close_btn" id="close_btn">
             <i className="ri-close-fill"></i>
           </button>
-          <ul className="nav_menu_list">
-            <li className="nav_menu_item">
+          <ul class="nav_menu_list">
+            <li class="nav_menu_item">
               <Link to={"/"}>
-                <a href="/" className="nav_menu_link">
-                  Inicio
+                <a href="/" class="nav_menu_link">
+                  inicio
                 </a>
               </Link>
             </li>
-            <li className="nav_menu_item">
-              <Link to={"/account"}>
-                <a href="/cuenta" className="nav_menu_link">
-                  cuenta
+            <li class="nav_menu_item">
+              <Link to={"/generales"}>
+                <a href="/generales" class="nav_menu_link">
+                  generales
                 </a>
               </Link>
             </li>
-            <li className="nav_menu_item">
-              <Link to={"/formularios"}>
-                <a href="/formularios" className="nav_menu_link">
-                  formularios
+            <li class="nav_menu_item">
+              <Link to={"/metalurgia"}>
+                <a href="/metalurgia" class="nav_menu_link">
+                  metalurgia
                 </a>
               </Link>
             </li>
-            <li className="nav_menu_item">
-              <Link to={"/servicios"}>
-                <a href="/servicios" className="nav_menu_link">
-                  servicios
+            <li class="nav_menu_item">
+              <Link to={"/carpinteria"}>
+                <a href="/carpinteria" class="nav_menu_link">
+                  carpinteria
                 </a>
               </Link>
             </li>
-            <li className="nav_menu_item">
-              <Link to={"/contact"}>
-                <a href="/contacto" className="nav_menu_link">
-                  contacto
+            <li class="nav_menu_item">
+              <Link to={"/electricidad"}>
+                <a href="/electricidad" class="nav_menu_link">
+                  electricidad
                 </a>
               </Link>
             </li>

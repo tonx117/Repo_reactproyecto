@@ -1,8 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
 export default function Contacto() {
   return (
     <div>
+      <Navbar />
       <form action="/enviar-correo" method="post">
         <div className="contact_form">
           <div className="formulario">

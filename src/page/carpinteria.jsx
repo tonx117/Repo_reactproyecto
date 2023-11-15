@@ -1,8 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
-export default function carpinteria() {
+export default function Carpinteria() {
   return (
     <div>
+      <Wikinavbar />
       <br />
       <br />
       <h1>

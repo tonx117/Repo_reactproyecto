@@ -1,8 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
 export default function Generales() {
   return (
     <div>
+      <Navbar />
       <br />
       <br />
       <h1>Conceptos básicos de seguridad industrial</h1>

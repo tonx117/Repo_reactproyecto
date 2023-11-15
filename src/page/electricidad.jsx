@@ -1,8 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
 export default function Electricidad() {
   return (
     <div>
+      <Wikinavbar />
       <br />
       <br />
       <h1>Seguridad en el trabajo con Tableros Eléctricos</h1>

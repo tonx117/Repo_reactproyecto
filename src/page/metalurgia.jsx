@@ -1,9 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
-export default function metalurgia() {
+export default function Metalurgia() {
   return (
     <div>
-      {" "}
+      <Wikinavbar />
       <br />
       <br />
       <h1>Seguridad en el torno</h1>

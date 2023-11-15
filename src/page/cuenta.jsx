@@ -1,8 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar.jsx";
+import "../public/nav.css";
+import "../public/style.css";
 export default function Cuenta() {
   return (
     <div>
+      <Navbar />
       <div class="hero">
         <div class="hero_content">
           <h1 class="hero_title">Cuenta</h1>
@@ -19,9 +23,7 @@ export default function Cuenta() {
                   <p class="user-follow-info">Guardar tus datos en la página</p>
                 </div>
               </div>
-              <a href="/register" class="button">
-                Registrarse
-              </a>
+              <Link to={"/register"}>register</Link>
             </div>
             <div class="box">
               <div class="box-top">

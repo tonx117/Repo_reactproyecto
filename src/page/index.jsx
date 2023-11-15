@@ -6,6 +6,7 @@ import vector from "../public/images/vector.png";
 export const Index = () => {
   return (
     <>
+      <Navbar />
       <section className="wrapper">
         <div className="container">
           <div className="grid-cols-2">

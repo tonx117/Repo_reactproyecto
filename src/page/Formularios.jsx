@@ -1,8 +1,10 @@
 import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
 
 export default function Formularios() {
   return (
     <section>
+      <Navbar />
       <div className="wrap_cuenta">
         <div className="box">
           <div className="box-top">

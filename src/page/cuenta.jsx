@@ -33,9 +33,11 @@ export default function Cuenta() {
                   <p class="user-follow-info">Ingresar a través de tu cuenta</p>
                 </div>
               </div>
-              <a href="/login" class="button">
-                Ingresar
-              </a>
+              <Link to={"/login"}>
+                <a href="/login" class="button">
+                  Ingresar
+                </a>
+              </Link>
             </div>
             <div class="box">
               <div class="box-top">

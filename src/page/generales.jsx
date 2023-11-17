@@ -1,10 +1,10 @@
 import React from "react";
-import { Navbar } from "../components/Navbar.jsx";
+import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Generales() {
   return (
     <div>
-      <Navbar />
+      <Wikinavbar />
       <br />
       <br />
       <h1>Conceptos básicos de seguridad industrial</h1>

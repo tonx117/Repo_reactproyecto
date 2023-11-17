@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
@@ -63,8 +64,9 @@ export default function Register() {
             className="main__input main__input--send"
           />
         </form>
-
-        <a href="/login">¿Ya tienes una cuenta?</a>
+        <Link to={"/login"}>
+          <a href="/login">¿Ya tienes una cuenta?</a>
+        </Link>
 
         <p className="main__paragraph">O continúe con</p>
 

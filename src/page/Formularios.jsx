@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../components/Navbar.jsx";
+import { Link } from "react-router-dom";
 
 export default function Formularios() {
   return (
@@ -20,9 +21,11 @@ export default function Formularios() {
               </p>
             </div>
           </div>
-          <a href="/checklist" className="button">
-            Rellenar
-          </a>
+          <Link to={"/checklist"}>
+            <a href="/checklist" className="button">
+              Rellenar
+            </a>
+          </Link>
         </div>
       </div>
     </section>

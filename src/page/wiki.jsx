@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../components/Navbar.jsx";
+import { Link } from "react-router-dom";
 
 export default function Wiki() {
   return (
@@ -23,9 +24,11 @@ export default function Wiki() {
                 en todas las empresas.
               </p>
             </div>
-            <a href="/generales" className="button">
-              Leer más.
-            </a>
+            <Link to={"/generales"}>
+              <a href="/generales" className="button">
+                Leer más.
+              </a>
+            </Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -43,9 +46,11 @@ export default function Wiki() {
                 manera segura en el torno.
               </p>
             </div>
-            <a href="/metalurgia" className="button">
-              Leer más.
-            </a>
+            <Link to={"/metalurgia"}>
+              <a href="/metalurgia" className="button">
+                Leer más.
+              </a>
+            </Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -63,9 +68,11 @@ export default function Wiki() {
                 utilización de las herramientas de forma adecuada.
               </p>
             </div>
-            <a href="/carpinteria" className="button">
-              Leer más.
-            </a>
+            <Link to={"/carpinteria"}>
+              <a href="/carpinteria" className="button">
+                Leer más.
+              </a>
+            </Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -83,9 +90,11 @@ export default function Wiki() {
                 eléctrica para un buen manipulamiento de la misma.
               </p>
             </div>
-            <a href="/electricidad" className="button">
-              Leer más.
-            </a>
+            <Link to={"/electricidad"}>
+              <a href="/electricidad" className="button">
+                Leer más.
+              </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../components/Navbar.jsx";
+import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Metalurgia() {
   return (

@@ -1,7 +1,7 @@
 import "../public/nav.css";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Wikinavbar = () => {
   const Menu = () => {
     const navId = document.getElementById("nav_menu"),
       ToggleBtnId = document.getElementById("toggle_btn"),

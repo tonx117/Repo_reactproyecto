@@ -28,39 +28,19 @@ export const Navbar = () => {
           </button>
           <ul className="nav_menu_list">
             <li className="nav_menu_item">
-              <Link to={"/"}>
-                <a href="/" className="nav_menu_link">
-                  Inicio
-                </a>
-              </Link>
+              <Link to={"/"}>Inicio</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/account"}>
-                <a href="/cuenta" className="nav_menu_link">
-                  cuenta
-                </a>
-              </Link>
+              <Link to={"/account"}>cuenta</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/formularios"}>
-                <a href="/formularios" className="nav_menu_link">
-                  formularios
-                </a>
-              </Link>
+              <Link to={"/formularios"}>formularios</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/servicios"}>
-                <a href="/servicios" className="nav_menu_link">
-                  servicios
-                </a>
-              </Link>
+              <Link to={"/servicios"}>servicios</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/contact"}>
-                <a href="/contacto" className="nav_menu_link">
-                  contacto
-                </a>
-              </Link>
+              <Link to={"/contact"}>contacto</Link>
             </li>
           </ul>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { sweetAlert } from "../public/js/sweetalert.js";
 
 export default function Register() {
   return (
@@ -64,9 +65,7 @@ export default function Register() {
             className="main__input main__input--send"
           />
         </form>
-        <Link to={"/login"}>
-          <a href="/login">¿Ya tienes una cuenta?</a>
-        </Link>
+        <Link to={"/login"}>¿Ya tienes una cuenta?</Link>
 
         <p className="main__paragraph">O continúe con</p>
 

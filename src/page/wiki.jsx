@@ -24,11 +24,7 @@ export default function Wiki() {
                 en todas las empresas.
               </p>
             </div>
-            <Link to={"/generales"}>
-              <a href="/generales" className="button">
-                Leer más.
-              </a>
-            </Link>
+            <Link to={"/generales"}>Leer más.</Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -46,11 +42,7 @@ export default function Wiki() {
                 manera segura en el torno.
               </p>
             </div>
-            <Link to={"/metalurgia"}>
-              <a href="/metalurgia" className="button">
-                Leer más.
-              </a>
-            </Link>
+            <Link to={"/metalurgia"}>Leer más.</Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -68,11 +60,7 @@ export default function Wiki() {
                 utilización de las herramientas de forma adecuada.
               </p>
             </div>
-            <Link to={"/carpinteria"}>
-              <a href="/carpinteria" className="button">
-                Leer más.
-              </a>
-            </Link>
+            <Link to={"/carpinteria"}>Leer más.</Link>
           </div>
           <div className="box">
             <div className="box-top">
@@ -90,11 +78,7 @@ export default function Wiki() {
                 eléctrica para un buen manipulamiento de la misma.
               </p>
             </div>
-            <Link to={"/electricidad"}>
-              <a href="/electricidad" className="button">
-                Leer más.
-              </a>
-            </Link>
+            <Link to={"/electricidad"}>Leer más.</Link>
           </div>
         </div>
       </section>

@@ -21,11 +21,7 @@ export default function Formularios() {
               </p>
             </div>
           </div>
-          <Link to={"/checklist"}>
-            <a href="/checklist" className="button">
-              Rellenar
-            </a>
-          </Link>
+          <Link to={"/checklist"}>Rellenar</Link>
         </div>
       </div>
     </section>

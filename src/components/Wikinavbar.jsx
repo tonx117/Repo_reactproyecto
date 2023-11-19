@@ -28,39 +28,19 @@ export const Wikinavbar = () => {
           </button>
           <ul class="nav_menu_list">
             <li class="nav_menu_item">
-              <Link to={"/"}>
-                <a href="/" class="nav_menu_link">
-                  inicio
-                </a>
-              </Link>
+              <Link to={"/"}>inicio</Link>
             </li>
             <li class="nav_menu_item">
-              <Link to={"/generales"}>
-                <a href="/generales" class="nav_menu_link">
-                  generales
-                </a>
-              </Link>
+              <Link to={"/generales"}>generales</Link>
             </li>
             <li class="nav_menu_item">
-              <Link to={"/metalurgia"}>
-                <a href="/metalurgia" class="nav_menu_link">
-                  metalurgia
-                </a>
-              </Link>
+              <Link to={"/metalurgia"}>metalurgia</Link>
             </li>
             <li class="nav_menu_item">
-              <Link to={"/carpinteria"}>
-                <a href="/carpinteria" class="nav_menu_link">
-                  carpinteria
-                </a>
-              </Link>
+              <Link to={"/carpinteria"}>carpinteria</Link>
             </li>
             <li class="nav_menu_item">
-              <Link to={"/electricidad"}>
-                <a href="/electricidad" class="nav_menu_link">
-                  electricidad
-                </a>
-              </Link>
+              <Link to={"/electricidad"}>electricidad</Link>
             </li>
           </ul>
         </div>

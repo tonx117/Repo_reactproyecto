@@ -110,8 +110,7 @@ const RegisterForm = () => {
             className="main__input main__input--send"
           />
         </form>
-
-        <a href="/login">Ya tienes una cuenta?</a>
+        <Link to={"/login"}>¿Ya tienes una cuenta?</Link>
 
         <p className="main__paragraph">O continue con</p>
 

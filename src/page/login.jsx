@@ -70,8 +70,7 @@ const LoginForm = () => {
             className="main__input main__input--send"
           />
         </form>
-
-        <a href="/register">Registrate aqui</a>
+        <Link to={"/register"}>Regístrate aquí</Link>
 
         <p className="main__paragraph">O continue con</p>
 

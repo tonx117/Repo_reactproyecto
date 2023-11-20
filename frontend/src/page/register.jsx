@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
+import { Navbar } from '../components/Navbar';
 
 const RegisterForm = () => {
   const [nombre, setNombre] = useState('');
@@ -55,9 +56,12 @@ const RegisterForm = () => {
       // Manejo de errores
     }
   };
+  
 
   return (
+    
     <section className="main">
+       <Navbar />
       <div className="main__contact">
         <h2 className="main__title">Bienvenido!</h2>
         <p className="main__paragraph">Porfavor ingrese los datos a continuacion</p>

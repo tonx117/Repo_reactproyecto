@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [nombre, setNombre] = useState('');
@@ -9,43 +10,50 @@ const RegisterForm = () => {
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('');
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("http://localhost:4000/api/usuario", {
-      nombre,
-      apellido,
-      numerotelefono,
-      correo,
-      contraseña,
-    });
-
-    console.log(response.data);
-
-    if (response.status !== 201 && response.status !== 200) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Algo salio mal!",
+    try {
+      const response = await axios.post("http://localhost:4000/api/usuario", {
+        nombre,
+        apellido,
+        numerotelefono,
+        correo,
+        contraseña,
       });
-      return;
+
+      console.log(response.data);
+
+      if (response.status !== 201 && response.status !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo salió mal!",
+        });
+        return;
+      }
+
+      Swal.fire({
+        icon: "success",
+        title: "Usuario creado correctamente",
+        text: "Usuario creado correctamente",
+      });
+
+      setNombre('');
+      setApellido('');
+      setNumerotelefono('');
+      setCorreo('');
+      setContraseña('');
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      // Manejo de errores
     }
-
-    Swal.fire({
-      icon: "success",
-      title: "Usuario creado correctamente",
-      text: "Usuario creado correctamente",
-    });
-
-    setNombre('');
-    setApellido('');
-    setNumerotelefono('');
-    setCorreo('');
-    setContraseña('');
-
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 2000);
   };
 
   return (

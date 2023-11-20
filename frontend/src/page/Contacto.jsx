@@ -1,109 +1,130 @@
-import React from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Navbar } from "../components/Navbar.jsx";
 
-export default function Contacto() {
+const Contacto = () => {
+  const [nombre, setNombre] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [website, setWebsite] = useState('');
+  const [asunto, setAsunto] = useState('');
+  const [mensaje, setMensaje] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("/enviar-correo", {
+        Nombre: nombre,
+        Email: email,
+        Telefono: telefono,
+        Website: website,
+        Asunto: asunto,
+        Mensaje: mensaje,
+      });
+
+      console.log(response.data);
+
+      if (response.status !== 201 && response.status !== 200) {
+        console.error("Error al enviar el correo:", response.status);
+        return;
+      }
+
+      console.log("Correo electrónico enviado:", response.data);
+      window.location.href = "/contacto"; // Redirección opcional después de enviar el correo
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      // Manejo de errores, podrías mostrar un mensaje al usuario indicando que hubo un problema
+    }
+  };
+
   return (
     <div>
       <Navbar />
-      <form action="/enviar-correo" method="post">
-        <div className="contact_form">
-          <div className="formulario">
-            <h1>Formulario de contacto</h1>
-            <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+      <form onSubmit={handleSubmit}>
+        <h1>Formulario de contacto</h1>
+        <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
 
-            <p>
-              <label htmlFor="nombre" className="colocar_nombre">
-                Nombre
-                <span className="obligatorio">*</span>
-              </label>
-              <input
-                type="text"
-                name="Nombre"
-                id="nombre"
-                required
-                placeholder="Escribe tu nombre"
-              />
-            </p>
-
-            <p>
-              <label htmlFor="email" className="colocar_email">
-                Email <span className="obligatorio">*</span>
-              </label>
-              <input
-                type="email"
-                name="Email"
-                id="email"
-                required
-                placeholder="Escribe tu Email"
-              />
-            </p>
-
-            <p>
-              <label htmlFor="telefono" className="colocar_telefono">
-                Teléfono{" "}
-              </label>
-              <input
-                type="tel"
-                name="Telefono"
-                id="telefono"
-                placeholder="Escribe tu teléfono"
-              />
-            </p>
-
-            <p>
-              <label htmlFor="website" className="colocar_website">
-                Sitio web{" "}
-              </label>
-              <input
-                type="url"
-                name="Website"
-                id="website"
-                placeholder="Escribe la URL de tu web"
-              />
-            </p>
-
-            <p>
-              <label htmlFor="asunto" className="colocar_asunto">
-                Asunto
-                <span className="obligatorio">*</span>
-              </label>
-              <input
-                type="text"
-                name="Asunto"
-                id="asunto"
-                required
-                placeholder="Escribe un asunto"
-              />
-            </p>
-
-            <p>
-              <label htmlFor="mensaje" className="colocar_mensaje">
-                Mensaje
-                <span className="obligatorio">*</span>
-              </label>
-              <textarea
-                name="Mensaje"
-                className="texto_mensaje"
-                id="mensaje"
-                required
-                placeholder="Deja aquí tu comentario..."
-              ></textarea>
-            </p>
-
-            <button
-              className="button"
-              type="submit"
-              name="enviar_formulario"
-              id="enviar"
-            >
-              <p>Enviar</p>
-            </button>
-          </div>
-          <p className="aviso">
-            <span className="obligatorio"> * </span>los campos son obligatorios.
-          </p>
+        <div>
+          <label>
+            Nombre
+            <input
+              type="text"
+              required
+              placeholder="Escribe tu nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+          </label>
         </div>
+
+        <div>
+          <label>
+            Email
+            <input
+              type="email"
+              required
+              placeholder="Escribe tu Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Teléfono
+            <input
+              type="tel"
+              placeholder="Escribe tu teléfono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Sitio web
+            <input
+              type="url"
+              placeholder="Escribe la URL de tu web"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Asunto
+            <input
+              type="text"
+              required
+              placeholder="Escribe un asunto"
+              value={asunto}
+              onChange={(e) => setAsunto(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Mensaje
+            <textarea
+              required
+              placeholder="Deja aquí tu comentario..."
+              value={mensaje}
+              onChange={(e) => setMensaje(e.target.value)}
+            ></textarea>
+          </label>
+        </div>
+
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );
-}
+};
+
+export default Contacto;
+

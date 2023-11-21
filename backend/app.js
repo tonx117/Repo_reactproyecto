@@ -5,9 +5,12 @@ import morgan from "morgan";
 import helmet from "helmet";
 import path from "path";
 import { config as dotenvConfig } from "dotenv";
+import http from "http";
 import ejs from "ejs";
 import { fileURLToPath } from "url";
 import fileUpload from 'express-fileupload';
+import { Server } from 'socket.io';
+
 
 
 
@@ -16,6 +19,10 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = process.env.PORT;
+
+const server = http.createServer(app);
+const io = new Server(server);
+
 
 import { sequelize } from "./db.js";
 import transporter from "./nodemailer.js";
@@ -50,11 +57,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs')
 
 // Views Routes
-import userRoutes from "./routes/user.routes.js";
+import userRoutes from "./api/routes/user.routes.js";
 app.use("/", userRoutes);
-
+/*
 import indexRoutes from "./routes/index.routes.js";
 app.use("/", indexRoutes);
+*/
 
 // API Routes
 import apiUserRoutes from "./api/routes/user.routes.js";
@@ -94,7 +102,38 @@ app.post("/enviar-correo", (req, res) => {
     }
   });
 });
+
+io.on('connection', (socket) => {
+
+  console.log(socket.id);
+
+
+  for (let i = 0; i < mensajesEnviados.length; i++) {
+    socket.emit('chat message', mensajesEnviados[i]);
+  }
+
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+    mensajesEnviados.push(msg);
+    console.log(mensajesEnviados);
+  });
+
+  socket.on('typing', (msg) => {
+    socket.broadcast.emit('typing', msg);
+  })
+
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected', socket.id);
+  });
+});
+
+server.listen(5173, () => {
+  console.log('listening on *:5173');
+});
+
+
 // Starting the server
-app.listen(process.env.PORT, () =>
+app.listen(port, () =>
   console.log("Server on port: omaiga " + port)
 );

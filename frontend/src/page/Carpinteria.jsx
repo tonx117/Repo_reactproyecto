@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Carpinteria() {

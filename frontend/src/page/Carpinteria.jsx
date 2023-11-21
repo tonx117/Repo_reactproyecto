@@ -1,4 +1,3 @@
-
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Carpinteria() {

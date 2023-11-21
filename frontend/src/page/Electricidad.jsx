@@ -1,4 +1,3 @@
-import React from "react";
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Electricidad() {
@@ -64,7 +63,7 @@ export default function Electricidad() {
       </p>
       <br />
       <br />
-      <h2 class="sub-titulo">La Puesta a Tierra de la Instalación Eléctrica</h2>
+      <h2 className="sub-titulo">La Puesta a Tierra de la Instalación Eléctrica</h2>
       <p>
         Junto con las protecciones instaladas al Tablero General de
         Electricidad, cada tablero posee una barra de tierra interna, la que se
@@ -85,7 +84,7 @@ export default function Electricidad() {
       </p>
       <br />
       <br />
-      <h2 class="sub-titulo">Sistemas de Protección</h2>
+      <h2 className="sub-titulo">Sistemas de Protección</h2>
       <p>
         Los interruptores de protección permiten que, en caso de que se presente
         un riesgo eléctrico para la instalación, se suprima automáticamente el
@@ -113,7 +112,7 @@ export default function Electricidad() {
       </p>
       <br />
       <br />
-      <h2 class="sub-titulo">
+      <h2 className="sub-titulo">
         Uso de Tarjetas de Bloqueo en los Tableros Eléctricos
       </h2>
       <p>
@@ -137,7 +136,7 @@ export default function Electricidad() {
       </p>
       <br />
       <br />
-      <h2 class="sub-titulo">Instalación de Tarjetas</h2>
+      <h2 className="sub-titulo">Instalación de Tarjetas</h2>
       <p>
         Antes de comenzar el trabajo, el operador debe instalar las tarjetas
         correspondientes en cada equipo donde se realizará el trabajo,
@@ -154,7 +153,7 @@ export default function Electricidad() {
       <img src="images/clas3.jpg" alt="" />
       <br />
       <br />
-      <h2 class="sub-titulo">La energía eléctrica y el cuerpo humano</h2>
+      <h2 className="sub-titulo">La energía eléctrica y el cuerpo humano</h2>
       <p>
         La gravedad de los efectos dañinos de un choque eléctrico en el cuerpo
         humano está determinada por los siguientes aspectos:

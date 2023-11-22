@@ -61,7 +61,7 @@ const RegisterForm = () => {
   return (
     
     <section className="main">
-       <Navbar />
+      <Navbar />
       <div className="main__contact">
         <h2 className="main__title">Bienvenido!</h2>
         <p className="main__paragraph">Porfavor ingrese los datos a continuacion</p>

@@ -2,49 +2,53 @@ import io from 'socket.io-client';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-// La URL debe ser la del servidor Socket.IO
-const socket = io('http://localhost:5173');
+const socket = io('http://localhost:4000');
+
 
 export function BotonSocket({ porcentaje }) {
-    const [acumuladorPorcentaje, setAcumuladorPorcentaje] = useState(0)
-    const [acumuladorEmpresas, setAcumuladorEmpresas] = useState(0);
-    const [porcentajeFinal, setPorcentajeFinal] = useState()
-
-    // Escuchamos el evento "mensaje" y lo manejamos con una función callback
-    socket.on('mensaje', (data) => {
-        console.log('Mensaje del servidor:', data);
-    });
-
-useEffect(()=>{
-    setPorcentajeFinal(acumuladorPorcentaje/acumuladorEmpresas);
-    socket.emit('enviar', porcentajeFinal);
-
-},[acumuladorEmpresas, acumuladorPorcentaje, porcentajeFinal])
+  const [acumuladorEmpresas, setAcumuladorEmpresas] = useState(0);
+  const [porcentajeFinal, setPorcentajeFinal] = useState(0)
 
 
-    const handleClick = () => {
-        console.log(`Mensaje enviado al servidor:  ${porcentaje}%`);
-        setAcumuladorPorcentaje((prevPorcentaje) => {
-            const updatedPorcentaje = prevPorcentaje + porcentaje;
-            console.log("updatedporcentaje: ",updatedPorcentaje)
-            return updatedPorcentaje
-        });
-        setAcumuladorEmpresas((prevEmpresas) =>{
-            const updatedEmpresas = prevEmpresas + 1
-            console.log("empresas: ",updatedEmpresas)
-            return updatedEmpresas
-        })
-    };
+useEffect(() => {
+    // Envia el porcentajeFinal actualizado
+    socket.on('chat message', function (porcentaje) {
+        setPorcentajeFinal(porcentaje);
+    });  
 
+    socket.on("all enterprises", function(numeroEmpresas){
+      setAcumuladorEmpresas(numeroEmpresas);
+    })
+  },[
+    acumuladorEmpresas,
+  ]);
 
+  useEffect(() => {
+    socket.emit('all enterprises');
+    socket.emit('get percentage');
+  }, [])
+  
+  const handleClick = () => {
+    console.log(`Mensaje enviado al servidor: ${porcentaje}%`);
+    setAcumuladorEmpresas((prevEmpresas) => prevEmpresas + 1);
+    socket.emit('chat message', (porcentaje)); 
+  };
 
-    return(
+  return (
     <>
-        <p>Porcentaje promedio global: {porcentajeFinal ? (porcentajeFinal).toFixed(2) : 0}% - Envios({acumuladorEmpresas})</p>
-        <button id="enviador" type="button" onClick={handleClick}>Enviar</button> 
+      <ul id="messages">
+
+      </ul>
+      <p id="procentajeGlobal">
+          Porcentaje Global: {porcentajeFinal ? porcentajeFinal.toFixed(2) : 0}% - Envíos({acumuladorEmpresas})
+      </p>
+      <button id="enviador" type="button" onClick={handleClick}>
+        Enviar
+      </button>
     </>
-    )
+  );
 }
+
 BotonSocket.propTypes = {
-    porcentaje: PropTypes.number.isRequired,
+  porcentaje: PropTypes.number.isRequired,
 };

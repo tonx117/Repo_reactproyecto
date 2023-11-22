@@ -27,7 +27,8 @@
     "nodemailer": "^6.9.6",
     "puppeteer": "^21.3.8",
     "sequelize": "^6.32.1",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

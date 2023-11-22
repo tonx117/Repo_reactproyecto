@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar.jsx";
 import { BotonSocket } from "../components/BotonSocket.jsx";
 
+
+
 export default function Checklist() {
   const [valorFinal, setValorFinal] = useState(0);
   const [porcentaje, setPorcentaje] = useState(0);
@@ -11,8 +13,8 @@ export default function Checklist() {
   const [valorSection2, setValorSection2] =  useState(0)
   const [valorSection3, setValorSection3] =  useState(0)
 
-
   const handleCheckboxChange = (e) => {
+
     const elementoOrigen = e.target;
     if (elementoOrigen.checked) {
       setValorFinal((prevValor) => {
@@ -22,15 +24,15 @@ export default function Checklist() {
       });
       switch(true){
         case elementoOrigen.classList.contains("ig-check"):
-          // código si tiene la clase1
+          // código si tiene la claseIG
           setValorSection1((prevIG) => prevIG + 1)
         break;
         case elementoOrigen.classList.contains("sg-check"):
-          // código si tiene la clase2
+          // código si tiene la claseSG
           setValorSection2((prevSG) => prevSG + 1)
         break;
         case elementoOrigen.classList.contains("hg-check"):
-          // código si tiene la clase3
+          // código si tiene la claseHG
           setValorSection3((prevHG) => prevHG + 1)
         break;
         default:
@@ -231,7 +233,6 @@ export default function Checklist() {
       <h2>Se cumplen {valorFinal} de 15 reglas</h2>
       <p>Cumplimiento: {(porcentaje).toFixed(2) + "%"}</p>
       <BotonSocket porcentaje={porcentaje}>
-          Enviar
       </BotonSocket>
 
 

@@ -10,6 +10,8 @@ import ejs from "ejs";
 import { fileURLToPath } from "url";
 import fileUpload from 'express-fileupload';
 import { Server } from 'socket.io';
+import { sequelize } from "./db.js";
+import transporter from "./nodemailer.js";
 
 
 
@@ -21,12 +23,13 @@ const app = express();
 const port = process.env.PORT;
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: 'http://localhost:5173',
+  }
+});
 
-
-import { sequelize } from "./db.js";
-import transporter from "./nodemailer.js";
-
+//Conection with sequelize
 sequelize
   .authenticate()
   .then(() => {
@@ -39,7 +42,16 @@ sequelize
 dotenvConfig();
 
 // Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:5173", // Reemplaza con la URL de tu aplicación React
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'Authorization'], // Agrega los encabezados necesarios
+};
+
+app.use(cors(corsOptions));
+
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -52,13 +64,14 @@ app.use(
   })
 );
 
+//Path
 app.use(express.static(path.join(__dirname, "public")));
-
 app.set('view engine', 'ejs')
 
 // Views Routes
 import userRoutes from "./api/routes/user.routes.js";
 app.use("/", userRoutes);
+
 /*
 import indexRoutes from "./routes/index.routes.js";
 app.use("/", indexRoutes);
@@ -103,24 +116,40 @@ app.post("/enviar-correo", (req, res) => {
   });
 });
 
+let mensajesEnviados = []
+
+
 io.on('connection', (socket) => {
-
-  console.log(socket.id);
-
+  socket.on('all enterprises', () => {
+    io.emit('all enterprises', mensajesEnviados.length)
+  })
+  console.log("se conectó", socket.id);
 
   for (let i = 0; i < mensajesEnviados.length; i++) {
     socket.emit('chat message', mensajesEnviados[i]);
   }
 
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-    mensajesEnviados.push(msg);
-    console.log(mensajesEnviados);
+  socket.on('get percentage', () => {
+    const porcentaje = mensajesEnviados.reduce(
+      (acumulador, elemento) => acumulador + (parseFloat(elemento)), 0
+    )
+
+    const porcentajePromedio = porcentaje / mensajesEnviados.length
+    socket.emit('chat message', porcentajePromedio);
   });
 
-  socket.on('typing', (msg) => {
-    socket.broadcast.emit('typing', msg);
-  })
+  socket.on('chat message', (msg) => {
+    mensajesEnviados.push(msg);
+    const porcentaje = mensajesEnviados.reduce(
+      (acumulador, elemento) => acumulador + (parseFloat(elemento)), 0
+    )
+
+    const porcentajePromedio = porcentaje / mensajesEnviados.length
+    io.emit('chat message', porcentajePromedio);
+    io.emit('all enterprises', mensajesEnviados.length)
+    console.log(mensajesEnviados)
+
+  });
 
 
   socket.on('disconnect', () => {
@@ -128,12 +157,9 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5173, () => {
-  console.log('listening on *:5173');
+
+server.listen(port, () => {
+  console.log(`Server conectado al puerto: ${port}`);
 });
 
 
-// Starting the server
-app.listen(port, () =>
-  console.log("Server on port: omaiga " + port)
-);

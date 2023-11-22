@@ -15,7 +15,6 @@ import Metalurgia from "./page/metalurgia.jsx";
 import Electricidad from "./page/electricidad.jsx";
 import Generales from "./page/generales.jsx";
 import Carpinteria from "./page/carpinteria.jsx";
-import Perfilform from "./page/Perfil.jsx"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -34,7 +33,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/contact" element={<Contacto />} />
         <Route path="/checklist" element={<Checklist />} />
         <Route path="/carpinteria" element={<Carpinteria />} />
-        <Route path="/perfil" element={<Perfilform />} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -46,9 +46,7 @@ export default function Cuenta() {
                   <p className="user-follow-info">Información acerca de ti</p>
                 </div>
               </div>
-              <a href="#" className="button">
-                Ver perfil
-              </a>
+              <Link to={"/Perfil"}>Perfil</Link>
             </div>
           </div>
         </div>

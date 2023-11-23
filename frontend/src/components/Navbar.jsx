@@ -40,7 +40,7 @@ export const Navbar = () => {
               <Link to={"/servicios"}>servicios</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/contact"}>contacto</Link>
+              <Link to={"/contacto"}>contacto</Link>
             </li>
           </ul>
         </div>

@@ -1,114 +1,105 @@
 import "../public/css/login.css";
-import { useState } from "react";
 import axios from "axios";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { AuthContext } from "../context/AuthProvider.jsx";
+import { Navbar } from "../components/Navbar.jsx";
 
 //hola
 
-const LoginForm = () => {
-  const [correo, setCorreo] = useState("");
-  const [contraseña, setContraseña] = useState("");
+export const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+  const [error, setError] = useState(false);
+  const [user, setUser] = useState({
+    correo: "",
+    password: "",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post(
-      "http://localhost:4000/api/usuario/login",
-      {
-        correo,
-        contraseña,
-      }
-    );
-
-    console.log(response.data);
-
-    if (response.status !== 201 && response.status !== 200) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "¡Algo salió mal!",
-      });
+    if (user.correo === "" || user.password === "") {
+      setError(true);
       return;
+    } else {
+      setError(false);
     }
 
-    Swal.fire({
-      icon: "success",
-      title: "Usuario logueado correctamente",
-      text: "Usuario logueado correctamente",
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/usuario/login",
+        {
+          correo: user.correo,
+          password: user.password,
+        }
+      );
+
+      if (response.status === 200) {
+        // Autenticación exitosa, llamar a la función de login del contexto
+        login({ token: response.data.token }); // Envía el token al contexto
+
+        localStorage.setItem("token", response.data.token); // Guarda el token en el localStorage
+
+        navigate("/");
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+      setError(true);
+    }
+  };
+
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
     });
-
-    setCorreo("");
-    setContraseña("");
-
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 2000);
   };
 
   return (
-    <>
+    <div className="body">
       <Navbar />
-      <section className="main">
-        <div className="main__contact">
-          <h2 className="main__title">¡Hola de nuevo!</h2>
-          <p className="main__paragraph">¡Bienvenido nuevamente!</p>
-
-          <form className="main__form" id="formlogin" onSubmit={handleSubmit}>
+      <main className="MainRL">
+        <div className="form-container">
+          <h1>Iniciar sesión</h1>
+          <p>¡Qué bueno que estés de vuelta!</p>
+          <Link to={"/"}>Volver al Inicio</Link>
+          <form className="FromRL" id="login-form" onSubmit={handleSubmit}>
+            <label htmlFor="correo" className="sr-only">
+              Correo electrónico
+            </label>
             <input
-              type="email"
-              placeholder="Ingrese su correo"
-              className="main__input"
-              id="correo"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
+              type="text"
+              name="correo"
+              id="user"
+              placeholder="Correo electrónico"
+              value={user.correo}
+              onChange={handleChange}
             />
-
+            <label htmlFor="password" className="sr-only">
+              Contraseña
+            </label>
             <input
               type="password"
+              name="password"
+              id="password"
               placeholder="Contraseña"
-              className="main__input"
-              id="contraseña"
-              value={contraseña}
-              onChange={(e) => setContraseña(e.target.value)}
+              value={user.password}
+              onChange={handleChange}
             />
-
-            <input
-              type="submit"
-              value="Ingresar"
-              className="main__input main__input--send"
-            />
+            <button type="submit">Iniciar sesión</button>
+            {error && <p className="error">Error al iniciar sesión</p>}
           </form>
-          <Link to={"/register"}>Regístrate aquí</Link>
-
-          <p className="main__paragraph">O continúa con</p>
-
-          <article className="main__social">
-            <a href="#" className="main__link">
-              <img
-                src="images/google-icon.svg"
-                className="main__icon"
-                alt="Google"
-              />
-            </a>
-
-            <a href="#" className="main__link">
-              <img src="images/apple.svg" className="main__icon" alt="Apple" />
-            </a>
-
-            <a href="#" className="main__link">
-              <img
-                src="images/facebook.svg"
-                className="main__icon"
-                alt="Facebook"
-              />
-            </a>
-          </article>
+          <p>
+            ¿Todavía no tenés una cuenta? -{" "}
+            <Link to={"/registro"}>Regístrate</Link>
+          </p>
+          {error && <p>Todos los campos son obligatorios</p>}
         </div>
-      </section>
-    </>
+      </main>
+    </div>
   );
 };
-
-export default LoginForm;

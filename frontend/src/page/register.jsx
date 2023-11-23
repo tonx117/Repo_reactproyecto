@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
+import { AuthContext } from '../context/AuthProvider.jsx';
+import { Navbar } from '../components/Navbar.jsx';
 
 const RegisterForm = () => {
+  const { register } = useContext(AuthContext); // Acceder al contexto de autenticación
+  const navigate = useNavigate();
+
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [numerotelefono, setNumerotelefono] = useState('');
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('');
-
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,38 +27,38 @@ const RegisterForm = () => {
         contraseña,
       });
 
-      console.log(response.data);
+      if (response.status === 201 || response.status === 200) {
+        // Registro exitoso, llamar a la función de registro del contexto
+        register({ token: response.data.token }); // Envía el token al contexto
 
-      if (response.status !== 201 && response.status !== 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Usuario creado correctamente",
+          text: "Usuario creado correctamente",
+        });
+
+        // Limpiar los campos del formulario después del registro
+        setNombre('');
+        setApellido('');
+        setNumerotelefono('');
+        setCorreo('');
+        setContraseña('');
+
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+      } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Algo salió mal!",
         });
-        return;
       }
-
-      Swal.fire({
-        icon: "success",
-        title: "Usuario creado correctamente",
-        text: "Usuario creado correctamente",
-      });
-
-      setNombre('');
-      setApellido('');
-      setNumerotelefono('');
-      setCorreo('');
-      setContraseña('');
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
       // Manejo de errores
     }
   };
-  
 
   return (
     

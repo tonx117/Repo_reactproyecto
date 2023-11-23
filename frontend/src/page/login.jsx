@@ -1,20 +1,24 @@
-import { useState } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
+import "../public/css/login.css";
+import { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 const LoginForm = () => {
-  const [correo, setCorreo] = useState('');
-  const [contraseña, setContraseña] = useState('');
+  const [correo, setCorreo] = useState("");
+  const [contraseña, setContraseña] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("http://localhost:4000/api/usuario/login", {
-      correo,
-      contraseña,
-    });
+    const response = await axios.post(
+      "http://localhost:4000/api/usuario/login",
+      {
+        correo,
+        contraseña,
+      }
+    );
 
     console.log(response.data);
 
@@ -33,8 +37,8 @@ const LoginForm = () => {
       text: "Usuario logueado correctamente",
     });
 
-    setCorreo('');
-    setContraseña('');
+    setCorreo("");
+    setContraseña("");
 
     setTimeout(() => {
       window.location.href = "/";
@@ -80,7 +84,11 @@ const LoginForm = () => {
 
           <article className="main__social">
             <a href="#" className="main__link">
-              <img src="images/google-icon.svg" className="main__icon" alt="Google" />
+              <img
+                src="images/google-icon.svg"
+                className="main__icon"
+                alt="Google"
+              />
             </a>
 
             <a href="#" className="main__link">
@@ -88,7 +96,11 @@ const LoginForm = () => {
             </a>
 
             <a href="#" className="main__link">
-              <img src="images/facebook.svg" className="main__icon" alt="Facebook" />
+              <img
+                src="images/facebook.svg"
+                className="main__icon"
+                alt="Facebook"
+              />
             </a>
           </article>
         </div>

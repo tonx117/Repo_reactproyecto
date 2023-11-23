@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import axios from 'axios';
+import "../public/css/contacto.css";
+import { useState } from "react";
+import axios from "axios";
 import { Navbar } from "../components/Navbar.jsx";
 
 const Contacto = () => {
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefono, setTelefono] = useState('');
-  const [website, setWebsite] = useState('');
-  const [asunto, setAsunto] = useState('');
-  const [mensaje, setMensaje] = useState('');
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [website, setWebsite] = useState("");
+  const [asunto, setAsunto] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,107 +43,116 @@ const Contacto = () => {
     <div>
       <Navbar />
       <form action="/enviar-correo" method="post">
-    <div class="contact_form">
-      <div class="formulario_contact">
-        <h1 class="h1_contact">Formulario de contacto</h1>
-        <h3 class="h3_contact">Escríbenos y en breve los pondremos en contacto contigo</h3>
+        <div class="contact_form">
+          <div class="formulario_contact">
+            <h1 class="h1_contact">Formulario de contacto</h1>
+            <h3 class="h3_contact">
+              Escríbenos y en breve los pondremos en contacto contigo
+            </h3>
 
-        <form action="submeter-formulario" method="post">
-          <p class="p_contact">
-            <label for="nombre" class="colocar_nombre"
-              >Nombre
-              <span class="obligatorio">*</span>
-            </label>
-            <input
-              class="input_form"
-              type="text"
-              name="Nombre"
-              id="nombre"
-              required="obligatorio"
-              placeholder="Escribe tu nombre"
-            />
-          </p>
+            <form action="submeter-formulario" method="post">
+              <p class="p_contact">
+                <label for="nombre" class="colocar_nombre">
+                  Nombre
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  class="input_form"
+                  type="text"
+                  name="Nombre"
+                  id="nombre"
+                  required="obligatorio"
+                  placeholder="Escribe tu nombre"
+                />
+              </p>
 
-          <p class="p_contact">
-            <label for="email" class="colocar_email">
-              Email <span class="obligatorio">*</span>
-            </label>
-            <input
-              class="input_form"
-              type="email"
-              name="Email"
-              id="email"
-              required="obligatorio"
-              placeholder="Escribe tu Email"
-            />
-          </p>
-          
+              <p class="p_contact">
+                <label for="email" class="colocar_email">
+                  Email <span class="obligatorio">*</span>
+                </label>
+                <input
+                  class="input_form"
+                  type="email"
+                  name="Email"
+                  id="email"
+                  required="obligatorio"
+                  placeholder="Escribe tu Email"
+                />
+              </p>
 
-          <p class="p_contact">
-            <label for="telefone" class="colocar_telefono">Teléfono </label>
-            <input
-              class="input_form"
-              type="tel"
-              name="Telefono"
-              id="telefono"
-              placeholder="Escribe tu teléfono"
-            />
-          </p>
+              <p class="p_contact">
+                <label for="telefone" class="colocar_telefono">
+                  Teléfono{" "}
+                </label>
+                <input
+                  class="input_form"
+                  type="tel"
+                  name="Telefono"
+                  id="telefono"
+                  placeholder="Escribe tu teléfono"
+                />
+              </p>
 
-          <p class="p_contact">
-            <label for="website" class="colocar_website">Sitio web </label>
-            <input
-              class="input_form"
-              type="url"
-              name="Website"
-              id="website"
-              placeholder="Escribe la URL de tu web"
-            />
-          </p>
+              <p class="p_contact">
+                <label for="website" class="colocar_website">
+                  Sitio web{" "}
+                </label>
+                <input
+                  class="input_form"
+                  type="url"
+                  name="Website"
+                  id="website"
+                  placeholder="Escribe la URL de tu web"
+                />
+              </p>
 
-          <p class="p_contact">
-            <label for="asunto" class="colocar_asunto"
-              >Asunto
-              <span class="obligatorio">*</span>
-            </label>
-            <input
-              class="input_form"
-              type="text"
-              name="Asunto"
-              id="asunto"
-              required="obligatorio"
-              placeholder="Escribe un asunto"
-            />
-          </p>
+              <p class="p_contact">
+                <label for="asunto" class="colocar_asunto">
+                  Asunto
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  class="input_form"
+                  type="text"
+                  name="Asunto"
+                  id="asunto"
+                  required="obligatorio"
+                  placeholder="Escribe un asunto"
+                />
+              </p>
 
-          <p class="p_contact">
-            <label for="mensaje" class="colocar_mensaje"
-              >Mensaje
-              <span class="obligatorio">*</span>
-            </label>
-            <textarea
-              name="Mensaje"
-              class="texto_mensaje"
-              id="mensaje"
-              required="obligatorio"
-              placeholder="Deja aquí tu comentario..."
-            ></textarea>
-          </p>
+              <p class="p_contact">
+                <label for="mensaje" class="colocar_mensaje">
+                  Mensaje
+                  <span class="obligatorio">*</span>
+                </label>
+                <textarea
+                  name="Mensaje"
+                  class="texto_mensaje"
+                  id="mensaje"
+                  required="obligatorio"
+                  placeholder="Deja aquí tu comentario..."
+                ></textarea>
+              </p>
 
-          <button class="button_contact" type="submit" name="enviar_formulario" id="enviar">
-            <p class="p_contact">Enviar</p>
-          </button>
-        </form>
+              <button
+                class="button_contact"
+                type="submit"
+                name="enviar_formulario"
+                id="enviar"
+              >
+                <p class="p_contact">Enviar</p>
+              </button>
+            </form>
 
-          <p class="aviso">
-            <span class="obligatorio"> * </span>los campos son obligatorios.
-          </p>
+            <p class="aviso">
+              <span class="obligatorio"> * </span>los campos son obligatorios.
+            </p>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
     </div>
   );
 };
 
 export default Contacto;
-

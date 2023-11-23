@@ -1,0 +1,62 @@
+/* Sección Formulario */
+.button-about {
+  background-color: #0464e2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100px;
+}
+
+.button-about2 {
+  background-color: #0464e2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100px;
+  margin-left: 10px;
+}
+
+.hero-title-about {
+  margin-bottom: 35px;
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.hero-left {
+  padding-top: 100px;
+  padding-left: 40px;
+}
+
+.hero-right {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.hero-info {
+  display: flex;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.hero-info li {
+  text-align: center; /* Centra el contenido de cada elemento */
+  margin: 10px 10px 10px; /* Espaciado horizontal entre los elementos (ajusta según sea necesario) */
+}
+
+.hero-info li h4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.img-about {
+  width: 80%;
+}

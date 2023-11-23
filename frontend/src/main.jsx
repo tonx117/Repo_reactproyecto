@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import { Index } from "./page/Index.jsx";
 import Cuenta from "./page/cuenta.jsx";
 import RegisterForm from "./page/register.jsx";

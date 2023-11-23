@@ -1,6 +1,6 @@
-import "../public/nav.css";
 import { Navbar } from "../components/Navbar.jsx";
 import vector from "../public/images/vector.png";
+import { Footer } from "../components/Footer.jsx";
 
 export const Index = () => {
   return (
@@ -28,6 +28,7 @@ export const Index = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

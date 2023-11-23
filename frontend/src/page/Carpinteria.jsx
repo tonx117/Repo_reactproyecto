@@ -1,3 +1,4 @@
+import { Footer } from "../components/Footer.jsx";
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Carpinteria() {
@@ -183,6 +184,7 @@ export default function Carpinteria() {
         revise el portaútil para descartar que haya cuerpos extraños, viruta o
         suciedad alojada allí.
       </li>
+      <Footer />
     </div>
   );
 }

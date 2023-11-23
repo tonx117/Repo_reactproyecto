@@ -11,7 +11,7 @@ export const Login = () => {
     const [error, setError] = useState(false);
     const [user, setUser] = useState({
         correo: "",
-        password: ""
+        contraseña: ""
     });
 
     const handleSubmit = async (e) => {
@@ -27,7 +27,7 @@ export const Login = () => {
         try {
             const response = await axios.post("http://localhost:4000/api/usuario/login", {
                 correo: user.correo,
-                password: user.password
+                contraseña: user.contraseña
             });
 
             if (response.status === 200) {
@@ -74,8 +74,8 @@ export const Login = () => {
                         <label htmlFor="password" className="sr-only">Contraseña</label>
                         <input
                             type="password"
-                            name="password"
-                            id="password"
+                            name="contraseña"
+                            id="contraseña"
                             placeholder="Contraseña"
                             value={user.password}
                             onChange={handleChange}

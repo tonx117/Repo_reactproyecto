@@ -6,15 +6,19 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
 
+    // Obtiene el token del localStorage
     const token = localStorage.getItem("token");
 
+    // Define el estado inicial del contexto de autenticación
     const initialState = {
         logged: false,
         token: null,
     }
 
+    // Utiliza useReducer para manejar las acciones de autenticación con el reducer authReducer
     const [state, dispatch] = useReducer(authReducer, initialState);
 
+    // useEffect se utiliza para verificar si hay un token almacenado y actualiza el estado si es así
     useEffect(() => {
         if (token) {
             dispatch({
@@ -27,6 +31,7 @@ export const AuthProvider = ({ children }) => {
         }
     }, [token, dispatch]) 
 
+    // Función para realizar el inicio de sesión
     const login = (payload) => {
         dispatch({
             type: types.LOGIN,
@@ -34,12 +39,14 @@ export const AuthProvider = ({ children }) => {
         })
     }
 
+    // Función para cerrar sesión
     const logout = () => {
         dispatch({
             type: types.LOGOUT
         })
     }
 
+    // Función para registrar un nuevo usuario
     const register = (payload) => {
         dispatch({
             type: types.REGISTER,
@@ -47,7 +54,7 @@ export const AuthProvider = ({ children }) => {
         })
     }
 
-
+    // Retorna el contexto de autenticación para ser utilizado por otros componentes
     return (
         <AuthContext.Provider value={{
             state,

@@ -1,6 +1,7 @@
 import "../public/css/formulario.css";
 import { Navbar } from "../components/Navbar.jsx";
 import { Link } from "react-router-dom";
+import { Footer } from "../components/Footer.jsx";
 
 export default function Formularios() {
   return (
@@ -41,6 +42,7 @@ export default function Formularios() {
             <img src="images/formulario1.png" alt="" class="img-about" />
           </div>
         </div>
+        <Footer />
       </div>
     </section>
   );

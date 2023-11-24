@@ -1,5 +1,6 @@
 import { Navbar } from "../components/Navbar.jsx";
 import { Link } from "react-router-dom";
+import { Footer } from "../components/Footer.jsx";
 
 export default function Wiki() {
   return (
@@ -81,6 +82,7 @@ export default function Wiki() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

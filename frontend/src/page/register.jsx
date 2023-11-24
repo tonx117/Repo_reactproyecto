@@ -141,6 +141,7 @@ const RegisterForm = () => {
             <img src="images/facebook.svg" className="main__icon" />
           </a>
         </article>
+        <Footer />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 export default function Metalurgia() {
   return (
@@ -112,6 +113,7 @@ export default function Metalurgia() {
         posición correcta.
       </li>
       <br />
+      <Footer />
     </div>
   );
 }

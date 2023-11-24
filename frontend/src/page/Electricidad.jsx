@@ -1,4 +1,5 @@
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 export default function Electricidad() {
   return (
@@ -196,6 +197,7 @@ export default function Electricidad() {
       </li>
       <br />
       <img src="images/clas4.jpg" alt="" />
+      <Footer />
     </div>
   );
 }

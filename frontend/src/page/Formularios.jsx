@@ -1,6 +1,11 @@
 import "../public/css/formulario.css";
 import { Navbar } from "../components/Navbar.jsx";
 import { Link } from "react-router-dom";
+import safety from "../public/images/safety.png"
+import drive from "../public/images/drive.png"
+import guarantee from "../public/images/guarantee.png"
+import formulario1 from "../public/images/formulario1.png"
+import { Footer } from "../components/Footer.jsx";
 
 export default function Formularios() {
   return (
@@ -20,15 +25,21 @@ export default function Formularios() {
             </a>
             <ul class="hero-info">
               <li>
-                <img src="images/safety.png" alt="" />
+              <div className="container-img">
+                <img src={safety} alt="safety-img" />
+              </div>
                 <h4>100% Seguro</h4>
               </li>
               <li>
-                <img src="images/guarantee.png" alt="" />
+              <div className="container-img">
+                <img src={guarantee} alt="guarante-img" />
+              </div>
                 <h4>Confiable</h4>
               </li>
               <li>
-                <img src="images/drive.png" alt="" />
+              <div className="container-img">
+                <img src={drive} alt="drive-img" />
+              </div>
                 <h4>
                   Buen <br /> salvaguardado
                 </h4>
@@ -37,10 +48,11 @@ export default function Formularios() {
           </div>
         </div>
         <div class="hero-right">
-          <div class="owl-nav disabled">
-            <img src="images/formulario1.png" alt="" class="img-about" />
+          <div class="container-img">
+            <img src={formulario1} alt="formulario-img" />
           </div>
         </div>
+        <Footer />
       </div>
     </section>
   );

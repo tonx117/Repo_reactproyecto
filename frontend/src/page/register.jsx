@@ -4,6 +4,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider.jsx";
+import { Footer } from "../components/Footer.jsx";
+import registerpic from "../public/images/registerpic.png";
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación
@@ -64,6 +66,9 @@ const RegisterForm = () => {
     <>
       <Navbar />
       <section className="main">
+        <figure className="main__figure">
+          <img src={registerpic} className="main__img" />
+        </figure>
         <div className="main__contact">
           <h2 className="main__title">Bienvenido!</h2>
           <p className="main__paragraph">
@@ -149,6 +154,7 @@ const RegisterForm = () => {
           </article>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

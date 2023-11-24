@@ -1,5 +1,10 @@
 import { Navbar } from "../components/Navbar.jsx";
 import { Link } from "react-router-dom";
+import seguridadindus from "../public/images/seguridadindustrial.jpg"
+import metalurgia from "../public/images/metalurgia2.jpg"
+import herramientas from "../public/images/seguridadherramientas.png"
+import electrico from "../public/images/electrico.jpg"
+import { Footer } from "../components/Footer.jsx";
 
 export default function Wiki() {
   return (
@@ -11,7 +16,7 @@ export default function Wiki() {
             <div className="box-top">
               <img
                 className="box-image"
-                src="images/generales.jpg"
+                src={seguridadindus}
                 alt="Imagen generales"
               />
               <div className="title-flex">
@@ -29,7 +34,7 @@ export default function Wiki() {
             <div className="box-top">
               <img
                 className="box-image"
-                src="images/metalurgia.jpg"
+                src={metalurgia}
                 alt="Metalurgia"
               />
               <div className="title-flex">
@@ -47,8 +52,8 @@ export default function Wiki() {
             <div className="box-top">
               <img
                 className="box-image"
-                src="images/carpinteria.jpg"
-                alt="Girl Eating Pizza"
+                src={herramientas}
+                alt="Herramientas"
               />
               <div className="title-flex">
                 <h3 className="box-title">Seguridad con herramientas</h3>
@@ -65,8 +70,8 @@ export default function Wiki() {
             <div className="box-top">
               <img
                 className="box-image"
-                src="images/electricidad.jpg"
-                alt="Girl Eating Pizza"
+                src={electrico}
+                alt="electricidad"
               />
               <div className="title-flex">
                 <h3 className="box-title">Seguridad con Tableros Eléctricos</h3>
@@ -81,6 +86,7 @@ export default function Wiki() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

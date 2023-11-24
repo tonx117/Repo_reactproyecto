@@ -1,4 +1,4 @@
-
+import { Footer } from "../components/Footer.jsx";
 import { Wikinavbar } from "../components/Wikinavbar.jsx";
 
 export default function Generales() {
@@ -92,6 +92,7 @@ export default function Generales() {
       </p>
       <br />
       <br />
+      <Footer />
     </div>
   );
 }

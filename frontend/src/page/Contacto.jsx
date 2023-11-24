@@ -2,6 +2,7 @@ import "../public/css/contacto.css";
 import { useState } from "react";
 import axios from "axios";
 import { Navbar } from "../components/Navbar.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -151,6 +152,7 @@ const Contacto = () => {
           </div>
         </div>
       </form>
+      <Footer />
     </div>
   );
 };

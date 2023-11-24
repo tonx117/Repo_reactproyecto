@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider.jsx";
 import { Navbar } from "../components/Navbar.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -96,6 +97,7 @@ export const Login = () => {
             </p>
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );

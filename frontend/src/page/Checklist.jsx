@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../components/Navbar.jsx";
 import { BotonSocket } from "../components/BotonSocket.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 
 
@@ -235,6 +236,6 @@ export default function Checklist() {
       <BotonSocket porcentaje={porcentaje}>
       </BotonSocket>
 
-
+      <Footer />
     </>
   );}

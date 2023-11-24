@@ -35,9 +35,6 @@ export const Navbar = () => {
               <Link to={"/"}>Inicio</Link>
             </li>
             <li className="nav_menu_item">
-            {state.logged ? <CierreSesion/> : <Link to={"/account"}>cuenta</Link>}
-            </li>
-            <li className="nav_menu_item">
               <Link to={"/formularios"}>formularios</Link>
             </li>
             <li className="nav_menu_item">
@@ -45,6 +42,9 @@ export const Navbar = () => {
             </li>
             <li className="nav_menu_item">
               <Link to={"/contacto"}>contacto</Link>
+            </li>
+            <li className="nav_menu_item">
+            {state.logged ? <CierreSesion/> : <Link to={"/account"}>cuenta</Link>}
             </li>
           </ul>
         </div>

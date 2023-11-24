@@ -1,0 +1,14 @@
+.container-footer{
+    width: 100%;
+    background-color: rgb(245, 242, 242);
+    padding: 10px;
+    border-radius: 5px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegúrate de que el z-index sea mayor que otros elementos si los hay */
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

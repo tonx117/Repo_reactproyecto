@@ -16,7 +16,7 @@
   height: var( - fixed-header-height);
   padding: 0 1.7rem;
   padding-bottom: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 /* ==== NAV ==== */
 .nav {
@@ -353,12 +353,6 @@
   color: #334157;
   line-height: 25px;
   font-size: 15.5px;
-}
-footer {
-  width: 100%;
-  background-color: var(--primary-color);
-  height: 12px;
-  margin-top: 8rem;
 }
 @media screen and (max-width: 768px) {
   .grid-cols-3 {

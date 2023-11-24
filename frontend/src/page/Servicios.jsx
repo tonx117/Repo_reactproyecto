@@ -1,4 +1,6 @@
 import { Navbar } from "../components/Navbar.jsx";
+import libreria from "../public/images/libreria.png";
+import trabajadores from "../public/images/trabajadores.png"
 
 export default function Servicios() {
   return (
@@ -11,13 +13,13 @@ export default function Servicios() {
               <div className="styleBox-border">
                 <img
                   className="styleBox-img1"
-                  src="images/libreria.png"
+                  src={libreria}
                   alt="imagenwiki"
                 />
               </div>
               <img
                 className="styleBox-img2"
-                src="images/trabalhadores.png"
+                src={trabajadores}
                 alt="imagenwiki"
               />
             </div>

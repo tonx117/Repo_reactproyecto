@@ -1,5 +1,3 @@
-
-
 .main {
   margin: auto;
   width: 90%;
@@ -16,8 +14,6 @@
 
   animation: mostrar 1.5s ease-in-out;
 }
-
-
 
 @keyframes mostrar {
   0% {

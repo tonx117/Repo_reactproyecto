@@ -18,7 +18,8 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (user.correo === "" || user.contraseña === "") { // Cambié 'user.password' a 'user.contraseña'
+    if (user.correo === "" || user.contraseña === "") {
+      // Cambié 'user.password' a 'user.contraseña'
       setError(true);
       return;
     }
@@ -53,38 +54,49 @@ export const Login = () => {
   };
 
   return (
-    <div className='body'>
+    <>
       <Navbar />
-      <main className='MainRL'>
-        <div className="form-container">
-          <h1>Iniciar sesión</h1>
-          <p>¡Qué bueno que estés de vuelta!</p>
-          <Link to={'/'} >Volver al Inicio</Link>
-          <form className="FromRL" id="login-form" onSubmit={handleSubmit}>
-            <label htmlFor="correo" className="sr-only">Correo electrónico</label>
-            <input
-              type="text"
-              name="correo"
-              id="correo" // Cambié 'user' a 'correo'
-              placeholder="Correo electrónico"
-              value={user.correo}
-              onChange={handleChange}
-            />
-            <label htmlFor="contraseña" className="sr-only">Contraseña</label>
-            <input
-              type="password"
-              name="contraseña"
-              id="contraseña"
-              placeholder="Contraseña"
-              value={user.contraseña}
-              onChange={handleChange}
-            />
-            <button type="submit">Iniciar sesión</button>
-            {error && <p className="error">Error al iniciar sesión o campos vacíos</p>}
-          </form>
-          <p>¿Todavía no tenés una cuenta? - <Link to={'/registro'}>Regístrate</Link></p>
-        </div>
-      </main>
-    </div>
+      <div className="body">
+        <main className="MainRL">
+          <div className="form-container">
+            <h1>Iniciar sesión</h1>
+            <p>¡Qué bueno que estés de vuelta!</p>
+            <Link to={"/"}>Volver al Inicio</Link>
+            <form className="FromRL" id="login-form" onSubmit={handleSubmit}>
+              <label htmlFor="correo" className="sr-only">
+                Correo electrónico
+              </label>
+              <input
+                type="text"
+                name="correo"
+                id="correo" // Cambié 'user' a 'correo'
+                placeholder="Correo electrónico"
+                value={user.correo}
+                onChange={handleChange}
+              />
+              <label htmlFor="contraseña" className="sr-only">
+                Contraseña
+              </label>
+              <input
+                type="password"
+                name="contraseña"
+                id="contraseña"
+                placeholder="Contraseña"
+                value={user.contraseña}
+                onChange={handleChange}
+              />
+              <button type="submit">Iniciar sesión</button>
+              {error && (
+                <p className="error">Error al iniciar sesión o campos vacíos</p>
+              )}
+            </form>
+            <p>
+              ¿Todavía no tenés una cuenta? -{" "}
+              <Link to={"/registro"}>Regístrate</Link>
+            </p>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };

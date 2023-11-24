@@ -1,40 +1,5 @@
 /* ==== "Inter" FONT-FAMILY FROM FONTS.GOOGLE.COM ==== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
-/* ==== ROOT RESET ==== */
-* {
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-/* ==== CSS VARIABLES ==== */
-:root {
-  --primary-color: #335eea;
-  --link-color: #506690;
-  --btn-hover-color: #2b50c7;
-  --lg-heading: #161c2d;
-  --text-content: #869ab8;
-  --fixed-header-height: 4.5rem;
-}
-/* ==== RESET HTML ==== */
-
-ul li {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
-button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
 
 /* ==== CONTAINER ==== */
 .container {

@@ -7,7 +7,7 @@ export const LoginProtect = () => {
     return (
         <>
             {
-                state.logged ? <Outlet /> : <Navigate to="/account" />
+                state.logged ? <Outlet /> : <Navigate to="/nologin" />
             }
         </>
     );

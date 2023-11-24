@@ -16,6 +16,7 @@ import Generales from "./page/generales.jsx";
 import Carpinteria from "./page/carpinteria.jsx";
 import { AuthProvider } from './context/AuthProvider.jsx';
 import { LoginProtect } from './routes/RutasProtegidas.jsx';
+import { FaltaLogueo } from "./page/NoLogeado.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/nologin" element={<FaltaLogueo />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/account" element={<Cuenta />} />
           <Route path="/Login" element={<Login />} />
@@ -41,7 +43,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contacto" element={<LoginProtect />}>
             <Route index element={<Contacto />} />
           </Route>
-          
+
         </Routes>
       </AuthProvider>
     </Router>

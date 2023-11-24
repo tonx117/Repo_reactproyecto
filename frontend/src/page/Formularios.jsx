@@ -49,11 +49,11 @@ export default function Formularios() {
         </div>
         <div className="hero-right">
           <div className="container-img">
-            <img src={formulario1} alt="formulario-img" />
+            <img className="img-form" src={formulario1} alt="formulario-img" />
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </section>
   );
 }

@@ -1,25 +1,14 @@
 export const Footer = () => {
   return (
     <footer>
-      <div class="contacto">
+      <div className="contactos importantes"> 
         <h4>Contacto</h4>
-        <p>Dirección: [Tu Dirección]</p>
-        <p>Teléfono: [Tu Número de Teléfono]</p>
-        <p>Email: [Tu Correo Electrónico]</p>
-      </div>
-
-      <div class="derechos">
-        <h4>Derechos Reservados</h4>
-        <p>
-          &copy; 2023 [Nombre de Tu Empresa]. Todos los derechos reservados.
-        </p>
-      </div>
-
-      <div class="acerca-de">
-        <h4>Acerca de Nosotros</h4>
-        <p>
-          Somos [Tu Empresa], dedicados a [Breve Descripción de Tu Empresa].
-        </p>
+        <p>Super intendencia de Riesgos en el Trabajo: (0-800-666-6778)</p>
+        <p>Aseguradoras de Riesgo del Trabajo:</p>
+        <ul>
+          <li>Centro de Atención al Cliente 0800-333-1278 - Lunes a Viernes de 8 a 20.</li>
+          <li>Coordinación de Emergencias Médicas: 0800-333-1333</li>
+        </ul>
       </div>
     </footer>
   );

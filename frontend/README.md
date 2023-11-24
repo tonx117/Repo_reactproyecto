@@ -18,11 +18,11 @@ npm run dev
 
 Las variables de entorno necesarias para que inicie correctamente el proyecto son: 
 ```bash
-PORT=4000
-DB_NAME=centinela
-DB_USER=root
-DB_PASSWORD=""
-DB_HOST=localhost
-DB_POST=3306
-DB_DIALECT=mysql 
+PORT=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_POST=
+DB_DIALECT=
 ```

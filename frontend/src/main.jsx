@@ -25,7 +25,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/nologin" element={<FaltaLogueo />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/metalurgia" element={<Metalurgia />} />
@@ -33,10 +32,18 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/generales" element={<Generales />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/wiki" element={<Wiki />} />
-          <Route path="/checklist" element={<Checklist />} />
+        
           <Route path="/carpinteria" element={<Carpinteria />} />
           
           {/* Rutas protegidas */}
+          <Route path="/checklist" element={<LoginProtect />}>
+            <Route index element={<Checklist />} />
+          </Route>
+          
+          <Route path="/nologin" element={<LoginProtect2 />}>
+            <Route index element={<FaltaLogueo />} />  
+            </Route>
+
           <Route path="/account" element={<LoginProtect2 />}>
             <Route index element={<Cuenta />} />
           </Route>
@@ -48,6 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contacto" element={<LoginProtect />}>
             <Route index element={<Contacto />} />
           </Route>
+
         </Routes>
       </AuthProvider>
     </Router>

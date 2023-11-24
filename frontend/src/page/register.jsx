@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider.jsx';
 import { Navbar } from '../components/Navbar.jsx';
+import {Footer} from '../components/Footer.jsx';
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación

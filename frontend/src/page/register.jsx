@@ -6,6 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider.jsx";
 import { Footer } from "../components/Footer.jsx";
 import registerpic from "../public/images/registerpic.png";
+import apple from "../public/images/apple.svg";
+import facebook from "../public/images/facebook.svg";
+import google from "../public/images/google-icon.svg";
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación
@@ -141,15 +144,15 @@ const RegisterForm = () => {
 
           <article className="main__social">
             <a href="#" className="main__link">
-              <img src="images/google-icon.svg" className="main__icon" />
+              <img className="main__icon" src={google} />
             </a>
 
             <a href="#" className="main__link">
-              <img src="images/apple.svg" className="main__icon" />
+              <img className="main__icon" src={apple} />
             </a>
 
             <a href="#" className="main__link">
-              <img src="images/facebook.svg" className="main__icon" />
+              <img className="main__icon" src={facebook} />
             </a>
           </article>
         </div>

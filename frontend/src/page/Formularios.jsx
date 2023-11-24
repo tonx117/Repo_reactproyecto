@@ -11,19 +11,19 @@ export default function Formularios() {
   return (
     <section>
       <Navbar />
-      <div class="grid-container">
-        <div class="hero-left">
-          <h1 class="hero-title-about">
+      <div className="grid-container">
+        <div className="hero-left">
+          <h1 className="hero-title-about">
             Formulario con <br /> medidas de seguridad e higiene
           </h1>
-          <div class="buttons-about">
-            <Link class="button-about" to="/checklist">
+          <div className="buttons-about">
+            <Link className="button-about" to="/checklist">
               Seguridad
             </Link>
-            <a class="button-about2" href="/higiene">
+            <a className="button-about2" href="/higiene">
               Higiene
             </a>
-            <ul class="hero-info">
+            <ul className="hero-info">
               <li>
               <div className="container-img">
                 <img src={safety} alt="safety-img" />
@@ -47,8 +47,8 @@ export default function Formularios() {
             </ul>
           </div>
         </div>
-        <div class="hero-right">
-          <div class="container-img">
+        <div className="hero-right">
+          <div className="container-img">
             <img src={formulario1} alt="formulario-img" />
           </div>
         </div>

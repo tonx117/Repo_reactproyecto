@@ -44,21 +44,21 @@ const Contacto = () => {
     <div>
       <Navbar />
       <form action="/enviar-correo" method="post">
-        <div class="contact_form">
-          <div class="formulario_contact">
-            <h1 class="h1_contact">Formulario de contacto</h1>
-            <h3 class="h3_contact">
+        <div className="contact_form">
+          <div className="formulario_contact">
+            <h1 className="h1_contact">Formulario de contacto</h1>
+            <h3 className="h3_contact">
               Escríbenos y en breve los pondremos en contacto contigo
             </h3>
 
             <form action="submeter-formulario" method="post">
-              <p class="p_contact">
-                <label for="nombre" class="colocar_nombre">
+              <p className="p_contact">
+                <label htmlFor="nombre" className="colocar_nombre">
                   Nombre
-                  <span class="obligatorio">*</span>
+                  <span className="obligatorio">*</span>
                 </label>
                 <input
-                  class="input_form"
+                  className="input_form"
                   type="text"
                   name="Nombre"
                   id="nombre"
@@ -67,12 +67,12 @@ const Contacto = () => {
                 />
               </p>
 
-              <p class="p_contact">
-                <label for="email" class="colocar_email">
-                  Email <span class="obligatorio">*</span>
+              <p className="p_contact">
+                <label htmlFor="email" className="colocar_email">
+                  Email <span className="obligatorio">*</span>
                 </label>
                 <input
-                  class="input_form"
+                  className="input_form"
                   type="email"
                   name="Email"
                   id="email"
@@ -81,12 +81,12 @@ const Contacto = () => {
                 />
               </p>
 
-              <p class="p_contact">
-                <label for="telefone" class="colocar_telefono">
+              <p className="p_contact">
+                <label htmlFor="telefone" className="colocar_telefono">
                   Teléfono{" "}
                 </label>
                 <input
-                  class="input_form"
+                  className="input_form"
                   type="tel"
                   name="Telefono"
                   id="telefono"
@@ -94,12 +94,12 @@ const Contacto = () => {
                 />
               </p>
 
-              <p class="p_contact">
-                <label for="website" class="colocar_website">
+              <p className="p_contact">
+                <label htmlFor="website" className="colocar_website">
                   Sitio web{" "}
                 </label>
                 <input
-                  class="input_form"
+                  className="input_form"
                   type="url"
                   name="Website"
                   id="website"
@@ -107,13 +107,13 @@ const Contacto = () => {
                 />
               </p>
 
-              <p class="p_contact">
-                <label for="asunto" class="colocar_asunto">
+              <p className="p_contact">
+                <label htmlFor="asunto" className="colocar_asunto">
                   Asunto
-                  <span class="obligatorio">*</span>
+                  <span className="obligatorio">*</span>
                 </label>
                 <input
-                  class="input_form"
+                  className="input_form"
                   type="text"
                   name="Asunto"
                   id="asunto"
@@ -122,14 +122,14 @@ const Contacto = () => {
                 />
               </p>
 
-              <p class="p_contact">
-                <label for="mensaje" class="colocar_mensaje">
+              <p className="p_contact">
+                <label htmlFor="mensaje" className="colocar_mensaje">
                   Mensaje
-                  <span class="obligatorio">*</span>
+                  <span className="obligatorio">*</span>
                 </label>
                 <textarea
                   name="Mensaje"
-                  class="texto_mensaje"
+                  className="texto_mensaje"
                   id="mensaje"
                   required="obligatorio"
                   placeholder="Deja aquí tu comentario..."
@@ -137,17 +137,18 @@ const Contacto = () => {
               </p>
 
               <button
-                class="button_contact"
+                className="button_contact"
                 type="submit"
                 name="enviar_formulario"
                 id="enviar"
+                onClick={handleSubmit}
               >
-                <p class="p_contact">Enviar</p>
+                <p className="p_contact">Enviar</p>
               </button>
             </form>
 
-            <p class="aviso">
-              <span class="obligatorio"> * </span>los campos son obligatorios.
+            <p className="aviso">
+              <span className="obligatorio"> * </span>los campos son obligatorios.
             </p>
           </div>
         </div>

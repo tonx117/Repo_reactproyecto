@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AuthProvider } from './context/AuthProvider.jsx';
+import { LoginProtect } from './routes/RutasProtegidas.jsx';
+import { FaltaLogueo } from "./page/NoLogeado.jsx";
+import { LoginProtect2 } from "./routes/RutasNoDisponibles.jsx";
 import { Index } from "./page/Index.jsx";
 import Cuenta from "./page/cuenta.jsx";
 import RegisterForm from "./page/register.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Servicios from "./page/Servicios.jsx";
 import Wiki from "./page/wiki.jsx";
 import Formularios from "./page/Formularios.jsx";
@@ -14,9 +18,6 @@ import Metalurgia from "./page/metalurgia.jsx";
 import Electricidad from "./page/electricidad.jsx";
 import Generales from "./page/generales.jsx";
 import Carpinteria from "./page/carpinteria.jsx";
-import { AuthProvider } from './context/AuthProvider.jsx';
-import { LoginProtect } from './routes/RutasProtegidas.jsx';
-import { FaltaLogueo } from "./page/NoLogeado.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -26,7 +27,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/" element={<Index />} />
           <Route path="/nologin" element={<FaltaLogueo />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/account" element={<Cuenta />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/metalurgia" element={<Metalurgia />} />
           <Route path="/electricidad" element={<Electricidad />} />
@@ -37,13 +37,17 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/carpinteria" element={<Carpinteria />} />
           
           {/* Rutas protegidas */}
+          <Route path="/account" element={<LoginProtect2 />}>
+            <Route index element={<Cuenta />} />
+          </Route>
+          
           <Route path="/formularios" element={<LoginProtect />}>
             <Route index element={<Formularios />} />
           </Route>
+          
           <Route path="/contacto" element={<LoginProtect />}>
             <Route index element={<Contacto />} />
           </Route>
-
         </Routes>
       </AuthProvider>
     </Router>

@@ -108,6 +108,7 @@ p {
   gap: 24px;
   padding: 24px;
   flex-wrap: wrap;
+  height: 100vh;
 }
 
 .box {

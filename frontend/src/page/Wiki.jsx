@@ -6,7 +6,7 @@ import herramientas from "../public/images/seguridadherramientas.png"
 import electrico from "../public/images/electrico.jpg"
 import { Footer } from "../components/Footer.jsx";
 
-export default function Wiki() {
+export default function() {
   return (
     <>
       <Navbar />

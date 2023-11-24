@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap");
+
+.row-generales {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.image-seguindus {
+    border-radius: 5px;
+    padding-left: 50px;
+}
+
+.h1-generales{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+}
+
+.row-generales2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.column1-generales1{
+    padding-right: 60px;
+}
+
+.texto-generales{
+    color: rgba(70, 70, 70, 0.822);
+}
+
+.image-equipamientoindus{
+    padding-top: 10px;
+    padding-left: 40px;
+}

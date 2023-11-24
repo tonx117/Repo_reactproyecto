@@ -18,6 +18,8 @@ export const Index = () => {
                 relacionado con la seguridad e higiene. Navega a través de
                 nuestros artículos, guías, herramientas y consejos para mejorar
                 tu experiencia en el trabajo.
+                <br></br>
+                <a href="https://centibot.zapier.app/" className="centibot">Asistente Virtual</a>
               </p>
             </div>
             <div className="grid-item-2">

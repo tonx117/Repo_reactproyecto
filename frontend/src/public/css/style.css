@@ -357,3 +357,30 @@ p {
   font-size: 16px;
   border-radius: 100px;
 }
+
+.centibot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 200px;
+  margin: 20px;
+  background-color: #e6e6e6;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border-color: #333;
+  margin-left: 100px;
+  border-radius: 20px;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.centibot:hover {
+    background-color: #0464e2;
+    color: white;
+    border-color: #0464e2;
+    box-shadow: 0 0 10px #0464e2;
+    transition: 0.5s;
+    cursor: pointer;
+}
+

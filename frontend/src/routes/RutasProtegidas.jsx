@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthProvider";
 export const LoginProtect = () => {
     // Obtiene el estado de autenticación del contexto de autenticación
     const { state } = useContext(AuthContext);
-
+    console.log(state.logged);
     return (
         <>
             {

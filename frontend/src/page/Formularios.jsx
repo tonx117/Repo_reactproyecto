@@ -17,9 +17,9 @@ export default function Formularios() {
             Formulario con <br /> medidas de seguridad e higiene
           </h1>
           <div class="buttons-about">
-            <a class="button-about" href="/checklist">
+            <Link class="button-about" to="/checklist">
               Seguridad
-            </a>
+            </Link>
             <a class="button-about2" href="/higiene">
               Higiene
             </a>

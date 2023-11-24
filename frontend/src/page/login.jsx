@@ -60,7 +60,6 @@ export const Login = () => {
 
   return (
     <>
-      <Navbar />
       <div className="main">
         <figure className="main__figure">
           <img src={registerpic} className="main__img" />
@@ -115,7 +114,6 @@ export const Login = () => {
           </article>
         </main>
       </div>
-      <Footer />
     </>
   );
 };

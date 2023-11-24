@@ -67,7 +67,6 @@ const RegisterForm = () => {
 
   return (
     <>
-      <Navbar />
       <section className="main">
         <figure className="main__figure">
           <img src={registerpic} className="main__img" />
@@ -157,7 +156,6 @@ const RegisterForm = () => {
           </article>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

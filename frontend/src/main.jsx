@@ -25,7 +25,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/nologin" element={<FaltaLogueo />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/metalurgia" element={<Metalurgia />} />
@@ -37,6 +36,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/carpinteria" element={<Carpinteria />} />
           
           {/* Rutas protegidas */}
+          <Route path="/nologin" element={<LoginProtect2 />}>
+            <Route index element={<FaltaLogueo />} />  
+            </Route>
+
           <Route path="/account" element={<LoginProtect2 />}>
             <Route index element={<Cuenta />} />
           </Route>
@@ -48,6 +51,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contacto" element={<LoginProtect />}>
             <Route index element={<Contacto />} />
           </Route>
+          
         </Routes>
       </AuthProvider>
     </Router>

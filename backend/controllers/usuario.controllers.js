@@ -1,7 +1,7 @@
 export const usuarioctrl = {};
 
 usuarioctrl.indexView = (_req, res) => {
-  res.render("index.ejs");
+
 };
 
 usuarioctrl.showView = (req, res) => {
@@ -10,7 +10,6 @@ usuarioctrl.showView = (req, res) => {
 };
 
 usuarioctrl.createView = (req, res) => {
-  res.render("register.ejs");
 };
 
 usuarioctrl.editView = (req, res) => {

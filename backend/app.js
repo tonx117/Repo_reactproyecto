@@ -6,7 +6,6 @@ import helmet from "helmet";
 import path from "path";
 import { config as dotenvConfig } from "dotenv";
 import http from "http";
-import ejs from "ejs";
 import { fileURLToPath } from "url";
 import fileUpload from 'express-fileupload';
 import { Server } from 'socket.io';
@@ -66,16 +65,11 @@ app.use(
 
 //Path
 app.use(express.static(path.join(__dirname, "public")));
-app.set('view engine', 'ejs')
 
 // Views Routes
 import userRoutes from "./api/routes/user.routes.js";
 app.use("/", userRoutes);
 
-/*
-import indexRoutes from "./routes/index.routes.js";
-app.use("/", indexRoutes);
-*/
 
 // API Routes
 import apiUserRoutes from "./api/routes/user.routes.js";
@@ -87,10 +81,6 @@ app.use("/api", apiUserRoutes);
 import { PDFRouter } from "./google-services/routes/formularios.routes.js";
 app.use("/api", PDFRouter);
 
-
-// app.use((_req, res, _next) => {
-//   res.status(404).send("Error 404");
-// });
 
 // Ruta para procesar el formulario y enviar el correo electrónico
 

@@ -2,6 +2,8 @@ import "../public/css/style.css";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar.jsx";
 import { Footer } from "../components/Footer.jsx";
+import registro from "../public/images/1.jpeg"
+import ingreso from "../public/images/2.jpeg"
 
 export default function Cuenta() {
   return (
@@ -15,7 +17,7 @@ export default function Cuenta() {
               <div className="box-top">
                 <img
                   className="box-image"
-                  src="images/1.jpeg"
+                  src={registro}
                   alt="Imagen Register"
                 />
                 <div className="title-flex">
@@ -31,7 +33,7 @@ export default function Cuenta() {
               <div className="box-top">
                 <img
                   className="box-image"
-                  src="images/2.jpeg"
+                  src={ingreso}
                   alt="Imagen login"
                 />
                 <div className="title-flex">

@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
                 }
             })
         }
-    }, [token, dispatch]) // Añade dispatch como dependencia
+    }, [token, dispatch]) 
 
     const login = (payload) => {
         dispatch({

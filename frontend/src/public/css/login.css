@@ -1,18 +1,4 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: "Montserrat", sans-serif;
-  min-height: 600px;
-  padding: 80px 0;
-  background-image: #fafbfb;
-  background-color: #fafbfb;
-  background-repeat: no-repeat;
-
-  display: flex;
-}
 
 .main {
   margin: auto;
@@ -31,10 +17,7 @@ body {
   animation: mostrar 1.5s ease-in-out;
 }
 
-a {
-  text-decoration: none;
-  color: #fafbfb;
-}
+
 
 @keyframes mostrar {
   0% {

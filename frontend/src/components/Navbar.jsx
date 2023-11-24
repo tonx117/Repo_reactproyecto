@@ -1,7 +1,11 @@
 import "../public/css/nav.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext, AuthProvider } from "../context/AuthProvider";
+import { CierreSesion } from "./CierreSesion";
 
 export const Navbar = () => {
+  const {state} = useContext(AuthContext)
   const Menu = () => {
     const navId = document.getElementById("nav_menu"),
       ToggleBtnId = document.getElementById("toggle_btn"),
@@ -31,7 +35,7 @@ export const Navbar = () => {
               <Link to={"/"}>Inicio</Link>
             </li>
             <li className="nav_menu_item">
-              <Link to={"/account"}>cuenta</Link>
+            {state.logged ? <CierreSesion/> : <Link to={"/account"}>cuenta</Link>}
             </li>
             <li className="nav_menu_item">
               <Link to={"/formularios"}>formularios</Link>

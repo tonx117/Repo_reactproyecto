@@ -4,7 +4,6 @@ import { Navbar } from "../components/Navbar.jsx";
 import { Footer } from "../components/Footer.jsx";
 import registro from "../public/images/1.jpeg"
 import ingreso from "../public/images/2.jpeg"
-import perfil from "../public/images/perfil.png"
 
 export default function Cuenta() {
   return (
@@ -28,7 +27,7 @@ export default function Cuenta() {
                   </p>
                 </div>
               </div>
-              <Link to={"/register"}>register</Link>
+              <Link to={"/register"}>Registro</Link>
             </div>
             <div className="box">
               <div className="box-top">
@@ -45,20 +44,6 @@ export default function Cuenta() {
                 </div>
               </div>
               <Link to={"/login"}>Ingresar</Link>
-            </div>
-            <div className="box">
-              <div className="box-top">
-                <img
-                  className="box-image"
-                  src={perfil}
-                  alt="Imagen perfil"
-                />
-                <div className="title-flex">
-                  <h3 className="box-title">Perfil</h3>
-                  <p className="user-follow-info">Información acerca de ti</p>
-                </div>
-              </div>
-              <Link to={"/Perfil"}>Perfil</Link>
             </div>
           </div>
         </div>

@@ -6,25 +6,21 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider.jsx";
 import { Navbar } from "../components/Navbar.jsx";
 
-//hola
-
 export const Login = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const [error, setError] = useState(false);
   const [user, setUser] = useState({
     correo: "",
-    password: "",
+    contraseña: "", // Cambié esto de 'contraseña' a 'contraseña'
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (user.correo === "" || user.password === "") {
+    if (user.correo === "" || user.contraseña === "") { // Cambié 'user.password' a 'user.contraseña'
       setError(true);
       return;
-    } else {
-      setError(false);
     }
 
     try {
@@ -32,16 +28,13 @@ export const Login = () => {
         "http://localhost:4000/api/usuario/login",
         {
           correo: user.correo,
-          password: user.password,
+          contraseña: user.contraseña, // Cambié 'password' a 'contraseña'
         }
       );
 
       if (response.status === 200) {
-        // Autenticación exitosa, llamar a la función de login del contexto
-        login({ token: response.data.token }); // Envía el token al contexto
-
-        localStorage.setItem("token", response.data.token); // Guarda el token en el localStorage
-
+        login({ token: response.data.token });
+        localStorage.setItem("token", response.data.token);
         navigate("/");
       } else {
         setError(true);
@@ -60,44 +53,36 @@ export const Login = () => {
   };
 
   return (
-    <div className="body">
+    <div className='body'>
       <Navbar />
-      <main className="MainRL">
+      <main className='MainRL'>
         <div className="form-container">
           <h1>Iniciar sesión</h1>
           <p>¡Qué bueno que estés de vuelta!</p>
-          <Link to={"/"}>Volver al Inicio</Link>
+          <Link to={'/'} >Volver al Inicio</Link>
           <form className="FromRL" id="login-form" onSubmit={handleSubmit}>
-            <label htmlFor="correo" className="sr-only">
-              Correo electrónico
-            </label>
+            <label htmlFor="correo" className="sr-only">Correo electrónico</label>
             <input
               type="text"
               name="correo"
-              id="user"
+              id="correo" // Cambié 'user' a 'correo'
               placeholder="Correo electrónico"
               value={user.correo}
               onChange={handleChange}
             />
-            <label htmlFor="password" className="sr-only">
-              Contraseña
-            </label>
+            <label htmlFor="contraseña" className="sr-only">Contraseña</label>
             <input
               type="password"
-              name="password"
-              id="password"
+              name="contraseña"
+              id="contraseña"
               placeholder="Contraseña"
-              value={user.password}
+              value={user.contraseña}
               onChange={handleChange}
             />
             <button type="submit">Iniciar sesión</button>
-            {error && <p className="error">Error al iniciar sesión</p>}
+            {error && <p className="error">Error al iniciar sesión o campos vacíos</p>}
           </form>
-          <p>
-            ¿Todavía no tenés una cuenta? -{" "}
-            <Link to={"/registro"}>Regístrate</Link>
-          </p>
-          {error && <p>Todos los campos son obligatorios</p>}
+          <p>¿Todavía no tenés una cuenta? - <Link to={'/registro'}>Regístrate</Link></p>
         </div>
       </main>
     </div>

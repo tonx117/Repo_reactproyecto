@@ -6,7 +6,6 @@ import helmet from "helmet";
 import path from "path";
 import { config as dotenvConfig } from "dotenv";
 import http from "http";
-import ejs from "ejs";
 import { fileURLToPath } from "url";
 import fileUpload from 'express-fileupload';
 import { Server } from 'socket.io';
@@ -116,44 +115,60 @@ app.post("/enviar-correo", (req, res) => {
   });
 });
 
-let mensajesEnviados = []
 
+//Socket.io
+let porcentajesEnviados = []
 
+//Se establece la conexion con el socket
 io.on('connection', (socket) => {
+  console.log("Hola, se conectó", socket.id);
+
+  //Se escucha el evento que pide la cantidad de empresas
   socket.on('all enterprises', () => {
-    io.emit('all enterprises', mensajesEnviados.length)
+
+    //El servidor emite el evento y pasa la cantidad de los elementos enviados
+    io.emit('all enterprises', porcentajesEnviados.length)
   })
-  console.log("se conectó", socket.id);
 
-  for (let i = 0; i < mensajesEnviados.length; i++) {
-    socket.emit('chat message', mensajesEnviados[i]);
-  }
-
+  //Se escucha el evento que pide el pocentaje promedio
   socket.on('get percentage', () => {
-    const porcentaje = mensajesEnviados.reduce(
+
+    //Se suman todos los porcentajes enviados
+    const porcentaje = porcentajesEnviados.reduce(
       (acumulador, elemento) => acumulador + (parseFloat(elemento)), 0
     )
 
-    const porcentajePromedio = porcentaje / mensajesEnviados.length
-    socket.emit('chat message', porcentajePromedio);
+    //Se calcula el promedio,
+    //dividiendo la suma de los porcentajes dividido la cantidad de elementos que fueron enviados.
+    const porcentajePromedio = porcentaje / porcentajesEnviados.length
+
+    //Se emite el evento con el porcentaje promedio
+    socket.emit('send data', porcentajePromedio);
   });
 
-  socket.on('chat message', (msg) => {
-    mensajesEnviados.push(msg);
-    const porcentaje = mensajesEnviados.reduce(
+  //Se escucha el evento send data y se utiliza como parametro el porcentaje que se envio en el formulario
+  socket.on('send data', (msg) => {
+    //Se agrega el porcentaje a la lista de porcentajes enviados
+    porcentajesEnviados.push(msg);
+
+
+    //Se calcula el porcentaje
+    const porcentaje = porcentajesEnviados.reduce(
       (acumulador, elemento) => acumulador + (parseFloat(elemento)), 0
     )
+    const porcentajePromedio = porcentaje / porcentajesEnviados.length
 
-    const porcentajePromedio = porcentaje / mensajesEnviados.length
-    io.emit('chat message', porcentajePromedio);
-    io.emit('all enterprises', mensajesEnviados.length)
-    console.log(mensajesEnviados)
+    //Se emite el evento con el porcentaje promedio para que llegue a todos los puntos
+    io.emit('send data', porcentajePromedio);
+    //Se emite el evento con la cantidad de empresas o envios para que llegue a todos los puntos
+    io.emit('all enterprises', porcentajesEnviados.length)
+    console.log(porcentajesEnviados)
 
   });
 
 
   socket.on('disconnect', () => {
-    console.log('user disconnected', socket.id);
+    console.log('Adios, se desconectó', socket.id);
   });
 });
 

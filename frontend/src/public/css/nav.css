@@ -39,17 +39,33 @@
 }
 .nav_menu_list .nav_menu_item {
   margin: 0 2rem;
+  margin-bottom: 10px;
+
 }
-.nav_menu_item .nav_menu_link {
+
+.nav_menu_item  a {
   font-size: 16.5px;
   line-height: 27px;
-  color: var( - link-color);
+  color: black;
   text-transform: capitalize;
   letter-spacing: 0.5px;
 }
-.nav_menu_link:hover {
-  color: var( - primary-color);
+
+.nav_menu_item{
+  border-bottom: solid 1px;
+  border-color: #ffffff;
 }
+.nav_menu_item:hover{
+  border-bottom: solid 1px;
+  border-color: rgb(24, 162, 204);
+  transition: 0.5s;
+}
+
+
+.nav_menu_item a::after{
+  color: #000;
+}
+
 .toggle_btn {
   font-size: 20px;
   font-weight: 600;

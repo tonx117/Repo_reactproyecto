@@ -6,6 +6,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider.jsx";
 import { Navbar } from "../components/Navbar.jsx";
 import { Footer } from "../components/Footer.jsx";
+import registerpic from "../public/images/registerpic.png";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -57,48 +58,61 @@ export const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="body">
-        <main className="MainRL">
-          <div className="form-container">
-            <h1>Iniciar sesión</h1>
-            <p>¡Qué bueno que estés de vuelta!</p>
-            <Link to={"/"}>Volver al Inicio</Link>
-            <form className="FromRL" id="login-form" onSubmit={handleSubmit}>
-              <label htmlFor="correo" className="sr-only">
-                Correo electrónico
-              </label>
-              <input
-                type="text"
-                name="correo"
-                id="correo" // Cambié 'user' a 'correo'
-                placeholder="Correo electrónico"
-                value={user.correo}
-                onChange={handleChange}
-              />
-              <label htmlFor="contraseña" className="sr-only">
-                Contraseña
-              </label>
-              <input
-                type="password"
-                name="contraseña"
-                id="contraseña"
-                placeholder="Contraseña"
-                value={user.contraseña}
-                onChange={handleChange}
-              />
-              <button type="submit">Iniciar sesión</button>
-              {error && (
-                <p className="error">Error al iniciar sesión o campos vacíos</p>
-              )}
-            </form>
-            <p>
-              ¿Todavía no tenés una cuenta? -{" "}
-              <Link to={"/registro"}>Regístrate</Link>
-            </p>
-          </div>
+      <div className="main">
+        <figure className="main__figure">
+          <img src={registerpic} className="main__img" />
+        </figure>
+        <main className="main__contact">
+          <h2 className="main__title">Iniciar sesión</h2>
+          <p className="main__paragraph">¡Qué bueno que estés de vuelta!</p>
+          <Link to={"/"}>Volver al Inicio</Link>
+          <form className="main__form" id="login-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="correo"
+              id="correo" // Cambié 'user' a 'correo'
+              className="main__input"
+              placeholder="Correo electrónico"
+              value={user.correo}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="contraseña"
+              id="contraseña"
+              className="main__input"
+              placeholder="Contraseña"
+              value={user.contraseña}
+              onChange={handleChange}
+            />
+            <button type="submit" className="main__input main__input--send">
+              Iniciar sesión
+            </button>
+            {error && (
+              <p className="error">Error al iniciar sesión o campos vacíos</p>
+            )}
+          </form>
+
+          <Link to={"/register"}>Registrate aqui</Link>
+
+          <p className="main__paragraph">O continue con</p>
+
+          <article className="main__social">
+            <a href="#" className="main__link">
+              <img src="images/google-icon.svg" className="main__icon" />
+            </a>
+
+            <a href="#" className="main__link">
+              <img src="images/apple.svg" className="main__icon" />
+            </a>
+
+            <a href="#" className="main__link">
+              <img src="images/facebook.svg" className="main__icon" />
+            </a>
+          </article>
         </main>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

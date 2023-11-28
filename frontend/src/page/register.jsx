@@ -1,14 +1,13 @@
-import { Navbar } from "../components/Navbar.jsx";
 import { useContext, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider.jsx";
-import { Footer } from "../components/Footer.jsx";
 import registerpic from "../public/images/registerpic.png";
 import apple from "../public/images/apple.svg";
 import facebook from "../public/images/facebook.svg";
 import google from "../public/images/google-icon.svg";
+import "../public/css/login.css";
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación

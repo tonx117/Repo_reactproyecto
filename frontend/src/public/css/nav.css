@@ -40,10 +40,9 @@
 .nav_menu_list .nav_menu_item {
   margin: 0 2rem;
   margin-bottom: 10px;
-
 }
 
-.nav_menu_item  a {
+.nav_menu_item a {
   font-size: 16.5px;
   line-height: 27px;
   color: black;
@@ -51,18 +50,17 @@
   letter-spacing: 0.5px;
 }
 
-.nav_menu_item{
+.nav_menu_item {
   border-bottom: solid 1px;
   border-color: #ffffff;
 }
-.nav_menu_item:hover{
+.nav_menu_item:hover {
   border-bottom: solid 1px;
   border-color: rgb(24, 162, 204);
   transition: 0.5s;
 }
 
-
-.nav_menu_item a::after{
+.nav_menu_item a::after {
   color: #000;
 }
 
@@ -383,4 +381,8 @@
   .featured_info span {
     font-size: 19px;
   }
+}
+
+.dropdown {
+  font-size: 17px;
 }

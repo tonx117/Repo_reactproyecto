@@ -64,9 +64,10 @@
   text-align: center;
 }
 
-.botonsocket,
-input[type="submit"],
-input[type="button"] {
+/* input[type="submit"],
+input[type="button"] */
+
+.botonsocket {
   margin: 10px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -75,9 +76,11 @@ input[type="button"] {
   border-radius: 5px;
   cursor: pointer;
 }
-.botonsocket,
-input[type="submit"]:hover,
-input[type="button"]:hover {
+
+/* input[type="submit"]:hover,
+input[type="button"]:hover  */
+
+.botonsocket {
   background-color: #0056b3;
 }
 

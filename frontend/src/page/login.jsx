@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import registerpic from "../public/images/registerpic.png";
 import apple from "../public/images/apple.svg";
 import facebook from "../public/images/facebook.svg";
-import google from "../public/images/google-icon.svg";
 import { useLogin } from "../hooks/useLogin";
+import Logingoogle from "../components/Logingoogle";
 
 export const Login = () => {
   const { handleChange, handleSubmit, user, error } = useLogin();
@@ -50,9 +50,7 @@ export const Login = () => {
           <p className="main__paragraph">O continue con</p>
 
           <article className="main__social">
-            <a href="#" className="main__link">
-              <img className="main__icon" src={google} />
-            </a>
+            <Logingoogle />
 
             <a href="#" className="main__link">
               <img className="main__icon" src={apple} />

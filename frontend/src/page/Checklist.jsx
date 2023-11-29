@@ -17,7 +17,7 @@ export default function Checklist() {
     if (elementoOrigen.checked) {
       setValorFinal((prevValor) => {
         const updatedValor = prevValor + 1;
-        setPorcentaje((updatedValor * 100) / 15);
+        setPorcentaje((updatedValor * 100) / 25);
         return updatedValor;
       });
       switch (true) {
@@ -40,7 +40,7 @@ export default function Checklist() {
     } else if (!elementoOrigen.checked) {
       setValorFinal((prevValor) => {
         const updatedValor = prevValor - 1;
-        setPorcentaje((updatedValor * 100) / 15);
+        setPorcentaje((updatedValor * 100) / 25);
         return updatedValor;
       });
       switch (true) {
@@ -103,7 +103,8 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Las salidas de emergencia están claramente señalizadas y
+                despejadas?
               </label>
               <br />
               <label className="label">
@@ -113,7 +114,8 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Los extintores están presentes en las ubicaciones designadas y
+                están llenos?
               </label>
               <br />
               <label className="label">
@@ -123,7 +125,8 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Existe un plan de evacuación claramente definido y conocido por
+                todo el personal y estudiantes?
               </label>
               <br />
               <label className="label">
@@ -133,7 +136,8 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se realizan inspecciones regulares en busca de posibles fugas
+                de gas u otros riesgos químicos?
               </label>
               <br />
               <label className="label">
@@ -143,7 +147,8 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se implementan controles de acceso para garantizar que solo
+                personas autorizadas ingresen a áreas restringidas?
               </label>
               <br />
             </div>
@@ -156,7 +161,8 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿La señalización de seguridad, como salidas de emergencia y
+                rutas de evacuación, está claramente visible y actualizada?
               </label>
               <br />
               <label className="label">
@@ -166,7 +172,8 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Las áreas exteriores, como estacionamientos, están bien
+                iluminadas y seguras?
               </label>
               <br />
               <label className="label">
@@ -176,7 +183,8 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Existen medidas de seguridad adicionales para proteger equipos
+                y materiales valiosos en la institución?
               </label>
               <br />
               <label className="label">
@@ -186,7 +194,8 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se lleva a cabo una inspección de los sistemas de fontanería
+                para prevenir riesgos de inundación?
               </label>
               <br />
               <label className="label">
@@ -196,7 +205,8 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Los procedimientos de primeros auxilios están claramente
+                establecidos y comunicados?
               </label>
               <br />
             </div>
@@ -209,7 +219,8 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se realizan inspecciones regulares de los sistemas de
+                ascensores y escaleras mecánicas?
               </label>
               <br />
               <label className="label">
@@ -219,7 +230,8 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿El personal de seguridad realiza patrullas regulares para
+                identificar posibles riesgos?
               </label>
               <br />
               <label className="label">
@@ -229,7 +241,8 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Existe un protocolo para la gestión de situaciones de acoso o
+                bullying?
               </label>
               <br />
               <label className="label">
@@ -239,7 +252,8 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se llevan a cabo inspecciones regulares de los sistemas de
+                fontanería y drenaje?
               </label>
               <br />
               <label className="label">
@@ -249,7 +263,8 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                Existen salidas de emergencia claramente señalizadas.
+                ¿Se realiza una verificación regular de los sistemas de control
+                de acceso, como tarjetas magnéticas?
               </label>
               <br />
             </div>
@@ -268,7 +283,7 @@ export default function Checklist() {
           }}
         />
 
-        <h2 className="h2">Se cumplen {valorFinal} de 15 reglas</h2>
+        <h2 className="h2">Se cumplen {valorFinal} de 25 reglas</h2>
         <p>Cumplimiento: {porcentaje.toFixed(2) + "%"}</p>
         <BotonSocket porcentaje={porcentaje}></BotonSocket>
       </section>

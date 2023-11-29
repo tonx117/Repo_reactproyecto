@@ -6,8 +6,8 @@ import { AuthContext } from "../context/AuthProvider.jsx";
 import registerpic from "../public/images/registerpic.png";
 import apple from "../public/images/apple.svg";
 import facebook from "../public/images/facebook.svg";
-import google from "../public/images/google-icon.svg";
 import "../public/css/login.css";
+import Logingoogle from "../components/Logingoogle.jsx";
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación
@@ -63,6 +63,15 @@ const RegisterForm = () => {
       // Manejo de errores
     }
   };
+
+  // function Google() {
+  //   const responseMessage = (response) => {
+  //     console.log(response);
+  //   };
+  //   const errorMessage = (error) => {
+  //     console.log(error);
+  //   };
+  // }
 
   return (
     <>
@@ -141,9 +150,7 @@ const RegisterForm = () => {
           <p className="main__paragraph">O continue con</p>
 
           <article className="main__social">
-            <a href="#" className="main__link">
-              <img className="main__icon" src={google} />
-            </a>
+            <Logingoogle />
 
             <a href="#" className="main__link">
               <img className="main__icon" src={apple} />

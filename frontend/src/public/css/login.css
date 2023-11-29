@@ -15,6 +15,10 @@
   animation: mostrar 1.5s ease-in-out;
 }
 
+.div_google_container {
+  display: inline-block;
+}
+
 @keyframes mostrar {
   0% {
     opacity: 0;

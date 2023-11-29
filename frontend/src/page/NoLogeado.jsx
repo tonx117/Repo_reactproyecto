@@ -20,7 +20,7 @@ export const FaltaLogueo = () => {
         <br />
         <img className="nologueadoimagen" src={nologueado} alt="" />
         <div>
-          <Link className="nologueadolink" to="/register">
+          <Link className="nologueadolink" to="/login">
             Iniciar sesión
           </Link>
         </div>

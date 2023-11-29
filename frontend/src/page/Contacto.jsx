@@ -5,35 +5,35 @@ import { Navbar } from "../components/Navbar.jsx";
 import { Footer } from "../components/Footer.jsx";
 
 const Contacto = () => {
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [website, setWebsite] = useState("");
-  const [asunto, setAsunto] = useState("");
-  const [mensaje, setMensaje] = useState("");
+  const [formData, setFormData] = useState({
+    Nombre: "",
+    Email: "",
+    Telefono: "",
+    Website: "",
+    Asunto: "",
+    Mensaje: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/enviar-correo", {
-        Nombre: nombre,
-        Email: email,
-        Telefono: telefono,
-        Website: website,
-        Asunto: asunto,
-        Mensaje: mensaje,
-      });
+      const response = await axios.post("/enviar-correo", formData);
 
-      console.log(response.data);
-
-      if (response.status !== 201 && response.status !== 200) {
+      if (response.status === 200) {
+        console.log("Correo electrónico enviado:", response.data);
+        // Redirección opcional después de enviar el correo
+        window.location.href = "/contacto";
+      } else {
         console.error("Error al enviar el correo:", response.status);
-        return;
       }
-
-      console.log("Correo electrónico enviado:", response.data);
-      window.location.href = "/contacto"; // Redirección opcional después de enviar el correo
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
       // Manejo de errores, podrías mostrar un mensaje al usuario indicando que hubo un problema
@@ -61,7 +61,7 @@ const Contacto = () => {
                   className="input_form"
                   type="text"
                   name="Nombre"
-                  id="nombre"
+                  id="Nombre"
                   required="obligatorio"
                   placeholder="Escribe tu nombre"
                 />
@@ -75,7 +75,7 @@ const Contacto = () => {
                   className="input_form"
                   type="email"
                   name="Email"
-                  id="email"
+                  id="Email"
                   required="obligatorio"
                   placeholder="Escribe tu Email"
                 />
@@ -89,7 +89,7 @@ const Contacto = () => {
                   className="input_form"
                   type="tel"
                   name="Telefono"
-                  id="telefono"
+                  id="Telefono"
                   placeholder="Escribe tu teléfono"
                 />
               </p>
@@ -102,7 +102,7 @@ const Contacto = () => {
                   className="input_form"
                   type="url"
                   name="Website"
-                  id="website"
+                  id="Website"
                   placeholder="Escribe la URL de tu web"
                 />
               </p>
@@ -116,7 +116,7 @@ const Contacto = () => {
                   className="input_form"
                   type="text"
                   name="Asunto"
-                  id="asunto"
+                  id="Asunto"
                   required="obligatorio"
                   placeholder="Escribe un asunto"
                 />
@@ -130,7 +130,7 @@ const Contacto = () => {
                 <textarea
                   name="Mensaje"
                   className="texto_mensaje"
-                  id="mensaje"
+                  id="Mensaje"
                   required="obligatorio"
                   placeholder="Deja aquí tu comentario..."
                 ></textarea>

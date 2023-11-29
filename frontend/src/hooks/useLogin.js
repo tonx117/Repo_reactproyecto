@@ -9,7 +9,7 @@ const useLogin = () => {
   const [error, setError] = useState(false);
   const [user, setUser] = useState({
     correo: "",
-    contraseña: "", // Cambié esto de 'contraseña' a 'contraseña'
+    contraseña: "", 
   });
 
   const handleSubmit = async (e) => {

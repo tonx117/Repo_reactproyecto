@@ -112,7 +112,7 @@ const RegisterForm = () => {
 
             <input
               type="tel"
-              placeholder="ingrese su numero de telefono"
+              placeholder="ingrese su numero de telefono (opcional)"
               className="main__input"
               id="telefonoregistro"
               value={numerotelefono}

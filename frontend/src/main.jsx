@@ -35,6 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/wiki" element={<Wiki />} />
 
           <Route path="/carpinteria" element={<Carpinteria />} />
+          <Route path="/contacto" element={<Contacto />} />
 
           {/* Rutas protegidas */}
           <Route path="/checklist" element={<LoginProtect />}>
@@ -51,10 +52,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
           <Route path="/formularios" element={<LoginProtect />}>
             <Route index element={<Formularios />} />
-          </Route>
-
-          <Route path="/contacto" element={<LoginProtect />}>
-            <Route index element={<Contacto />} />
           </Route>
         </Routes>
       </BrowserRouter>

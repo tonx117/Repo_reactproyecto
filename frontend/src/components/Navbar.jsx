@@ -41,20 +41,9 @@ export const Navbar = () => {
             <li className="nav_menu_item">
               <Link to={"/servicios"}>servicios</Link>
             </li>
-            {/* <li className="nav_menu_item dropdown">
-              <Dropdown
-                label=""
-                dismissOnClick={false}
-                renderTrigger={() => <span>Cuenta</span>}
-              >
-                <li className="nav_menu_item">
-                  <Link to={"/register"}>registro</Link>
-                </li>
-                <li className="nav_menu_item">
-                  <Link to={"/login"}>ingreso</Link>
-                </li>
-              </Dropdown>
-            </li> */}
+            <li className="nav_menu_item">
+              <Link to={"/contacto"}>contacto</Link>
+            </li>
             <li className="nav_menu_item">
               {state.logged ? (
                 <CierreSesion />

@@ -9,7 +9,6 @@ const Contacto = () => {
     Nombre: "",
     Email: "",
     Telefono: "",
-    Website: "",
     Asunto: "",
     Mensaje: "",
   });
@@ -90,20 +89,7 @@ const Contacto = () => {
                   type="tel"
                   name="Telefono"
                   id="Telefono"
-                  placeholder="Escribe tu teléfono"
-                />
-              </p>
-
-              <p className="p_contact">
-                <label htmlFor="website" className="colocar_website">
-                  Sitio web{" "}
-                </label>
-                <input
-                  className="input_form"
-                  type="url"
-                  name="Website"
-                  id="Website"
-                  placeholder="Escribe la URL de tu web"
+                  placeholder="Escribe tu teléfono (opcional)"
                 />
               </p>
 
@@ -148,7 +134,8 @@ const Contacto = () => {
             </form>
 
             <p className="aviso">
-              <span className="obligatorio"> * </span>los campos son obligatorios.
+              <span className="obligatorio"> * </span>los campos son
+              obligatorios.
             </p>
           </div>
         </div>

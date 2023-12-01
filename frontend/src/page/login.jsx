@@ -4,7 +4,7 @@ import registerpic from "../public/images/registerpic.png";
 import apple from "../public/images/apple.svg";
 import facebook from "../public/images/facebook.svg";
 import { useLogin } from "../hooks/useLogin";
-import Logingoogle from "../components/Logingoogle";
+import Logingoogle from "../components/LoginGoogle";
 
 export const Login = () => {
   const { handleChange, handleSubmit, user, error } = useLogin();

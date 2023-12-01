@@ -10,15 +10,15 @@ import { Index } from "./page/Index.jsx";
 import Cuenta from "./page/cuenta.jsx";
 import RegisterForm from "./page/register.jsx";
 import Servicios from "./page/Servicios.jsx";
-import Wiki from "./page/wiki.jsx";
+import Wiki from "./page/Wiki.jsx";
 import Formularios from "./page/Formularios.jsx";
 import Contacto from "./page/Contacto.jsx";
-import Checklist from "./page/checklist.jsx";
+import Checklist from "./page/Checklist.jsx";
 import { Login } from "./page/login.jsx";
-import Metalurgia from "./page/metalurgia.jsx";
-import Electricidad from "./page/electricidad.jsx";
-import Generales from "./page/generales.jsx";
-import Carpinteria from "./page/carpinteria.jsx";
+import Metalurgia from "./page/Metalurgia.jsx";
+import Electricidad from "./page/Electricidad.jsx";
+import Generales from "./page/Generales.jsx";
+import Carpinteria from "./page/Carpinteria.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>

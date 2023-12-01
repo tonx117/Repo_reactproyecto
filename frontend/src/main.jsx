@@ -21,8 +21,8 @@ import Generales from "./page/Generales.jsx";
 import Carpinteria from "./page/Carpinteria.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <GoogleOAuthProvider clientId="613931270690-eem6ppm97d4bafm02mvet3im7e236vuc.apps.googleusercontent.com">
-    <AuthProvider>
+  <AuthProvider>
+    <GoogleOAuthProvider clientId="613931270690-eem6ppm97d4bafm02mvet3im7e236vuc.apps.googleusercontent.com">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -58,6 +58,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
         </Routes>
       </BrowserRouter>
-    </AuthProvider>
-  </GoogleOAuthProvider>
+    </GoogleOAuthProvider>
+  </AuthProvider>
 );

@@ -7,7 +7,7 @@ import registerpic from "../public/images/registerpic.png";
 import apple from "../public/images/apple.svg";
 import facebook from "../public/images/facebook.svg";
 import "../public/css/login.css";
-import Logingoogle from "../components/Logingoogle.jsx";
+import Logingoogle from "../components/LoginGoogle.jsx";
 
 const RegisterForm = () => {
   const { register } = useContext(AuthContext); // Acceder al contexto de autenticación

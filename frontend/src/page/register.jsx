@@ -23,7 +23,7 @@ const RegisterForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/usuario", {
+      const response = await axios.post("http://localhost:4000/api/usuario/register", {
         nombre,
         apellido,
         numerotelefono,
@@ -33,8 +33,9 @@ const RegisterForm = () => {
 
       if (response.status === 201 || response.status === 200) {
         // Registro exitoso, llamar a la función de registro del contexto
-        register({ token: response.data.token }); // Envía el token al contexto
+        register({ token: response.data.token });
         console.log("Registro exitoso:", response.data);
+        localStorage.setItem("token", response.data.token);
       
 
         Swal.fire({

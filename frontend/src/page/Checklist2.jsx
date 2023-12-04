@@ -257,7 +257,7 @@ export default function Checklist() {
         </form>
         <div id="botoncheck">
           <input type="button" value="Imprimir" id="imprimirBtn" />
-          <form action="http://localhost:4000/api/" method="POST" enctype="multipart/form-data" id="enviogoogle">
+          <form action="http://localhost:4000/api/" method="POST" encType="multipart/form-data" id="enviogoogle">
             <input type="file" name="PDFfile" accept="application/pdf" />
             <input type="submit" value="Enviar a Google Drive"/>
           </form>

@@ -44,7 +44,7 @@ export const Navbar = () => {
             <li className="nav_menu_item">
               <Link to={"/contacto"}>contacto</Link>
             </li>
-            <li className="nav_menu_item">
+            <ul className="nav_menu_item">
               {state.logged ? (
                 <CierreSesion />
               ) : (
@@ -63,7 +63,7 @@ export const Navbar = () => {
                   </Dropdown>
                 </li>
               )}
-            </li>
+            </ul>
           </ul>
         </div>
         <button className="toggle_btn" id="toggle_btn" onClick={Menu}>

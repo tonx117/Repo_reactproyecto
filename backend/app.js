@@ -92,7 +92,8 @@ app.post("/enviar-correo", (req, res) => {
     from: Email,
     to: process.env.EMAIL_USER,
     subject: Asunto,
-    text: `Nombre: ${Nombre}\nEmail: ${Email}\nTelefono: ${Telefono}\nWebsite: ${Website}\n Mensaje: ${Mensaje}`,
+    text: 
+    `Nombre: ${Nombre}\nEmail: ${Email}\nTelefono: ${Telefono}\nWebsite: ${Website}\n Mensaje: ${Mensaje}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

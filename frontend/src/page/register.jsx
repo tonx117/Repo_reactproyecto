@@ -35,6 +35,8 @@ const RegisterForm = () => {
       if (response.status === 201 || response.status === 200) {
         // Registro exitoso, llamar a la función de registro del contexto
         register({ token: response.data.token }); // Envía el token al contexto
+        console.log("Registro exitoso:", response.data);
+      
 
         Swal.fire({
           icon: "success",

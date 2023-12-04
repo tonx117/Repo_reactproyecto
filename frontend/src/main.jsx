@@ -32,7 +32,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/generales" element={<Generales />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/wiki" element={<Wiki />} />
-        
           <Route path="/carpinteria" element={<Carpinteria />} />
           
           {/* Rutas protegidas */}

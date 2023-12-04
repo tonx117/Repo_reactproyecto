@@ -2,6 +2,7 @@ import Usuario from "../models/usuario.model.js";
 
 const usuarioctrl = {};
 
+
 usuarioctrl.index = async (_req, res) => {
   try {
     const usuarios = await Usuario.findAll();
@@ -44,6 +45,20 @@ usuarioctrl.store = async (req, res) => {
   const { nombre, apellido, numerotelefono, correo, contraseña } = req.body;
 
   try {
+    // Verificar si ya existe un usuario con el mismo correo electrónico
+    const usuarioExistente = await Usuario.findOne({
+      where: {
+        correo,
+      },
+    });
+
+    if (usuarioExistente) {
+      return res.status(400).json({
+        message: "El correo electrónico ya está registrado.",
+      });
+    }
+
+    // Si el correo electrónico no está registrado, procede a crear el nuevo usuario
     const nuevoUsuario = await Usuario.create({
       nombre,
       apellido,
@@ -52,7 +67,7 @@ usuarioctrl.store = async (req, res) => {
       contraseña,
     });
 
-    return res.json(nuevoUsuario);
+    return res.status(201).json(nuevoUsuario);
   } catch (error) {
     return res
       .status(error.status || 500)
@@ -127,6 +142,7 @@ usuarioctrl.login = async (req, res) => {
         message: "Correo o contraseña incorrectos.",
       });
     }
+    
     res.json(usuario);
   } catch (error) {
     return res.status(500).json({

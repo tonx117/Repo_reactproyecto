@@ -17,7 +17,7 @@ export default function Checklist() {
     if (elementoOrigen.checked) {
       setValorFinal((prevValor) => {
         const updatedValor = prevValor + 1;
-        setPorcentaje((updatedValor * 100) / 25);
+        setPorcentaje((updatedValor * 100) / 15);
         return updatedValor;
       });
       switch (true) {
@@ -40,7 +40,7 @@ export default function Checklist() {
     } else if (!elementoOrigen.checked) {
       setValorFinal((prevValor) => {
         const updatedValor = prevValor - 1;
-        setPorcentaje((updatedValor * 100) / 25);
+        setPorcentaje((updatedValor * 100) / 15);
         return updatedValor;
       });
       switch (true) {
@@ -272,7 +272,7 @@ export default function Checklist() {
           }}
         />
 
-        <h2 className="h2">Se cumplen {valorFinal} de 25 reglas</h2>
+        <h2 className="h2">Se cumplen {valorFinal} de 15 reglas</h2>
         <p>Cumplimiento: {porcentaje.toFixed(2) + "%"}</p>
         <BotonSocket porcentaje={porcentaje}></BotonSocket>
       </section>

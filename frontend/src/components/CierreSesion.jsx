@@ -8,6 +8,6 @@ export const CierreSesion = () => {
         localStorage.removeItem('token');
     }
   return (
-    <button onClick={cerrarSesion}> Cerrar Sesion</button>
+    <a onClick={cerrarSesion}> Cerrar Sesion</a>
   )
 }

@@ -151,4 +151,30 @@ usuarioctrl.login = async (req, res) => {
   }
 };
 
+usuarioctrl.google = async (req, res) => {
+  try {
+    const { correo, nombre, apellido } = req.body;
+
+    const existeUsuario = await Usuario.findOne({
+      where: {
+        correo,
+      },
+    });
+
+    if (!existeUsuario) {
+      const nuevoUsuario = await Usuario.create({
+        correo,
+        nombre,
+        apellido,
+      });
+      return res.json(nuevoUsuario);
+    }
+
+    return res.json(existeUsuario);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json(error);
+  }
+};
+
 export default usuarioctrl;

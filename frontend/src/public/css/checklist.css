@@ -1,0 +1,155 @@
+/* Estilos generales del formulario */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  background-color: #fafbfb;
+  overflow-y: auto;
+}
+
+.form {
+  max-width: fit-content;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+  border: 0.2em solid black;
+  text-align: left; /* Alinea el texto a la izquierda */
+  width: 100%;
+  box-sizing: content-box;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+#enviogoogle {
+  border: none;
+  box-shadow: none;
+  margin-top: 10px;
+}
+
+.h2 {
+  text-align: center;
+  color: #000000;
+}
+
+.h3 {
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+/* Estilos de los checkboxes */
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  color: #242424;
+}
+
+.input {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+/* Estilos del botón y el botón de impresión */
+
+#botoncheck {
+  text-align: center;
+}
+
+/* input[type="submit"],
+input[type="button"] */
+
+.botonsocket,
+input[type="button"] {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* input[type="submit"]:hover,
+input[type="button"]:hover  */
+
+.botonsocket:hover,
+input[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+.mycheck {
+  border: 3px solid red;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  padding: 0;
+  user-select: none;
+  flex-shrink: 0;
+  color: #2563eb;
+  background-color: #888;
+  border-color: #6d806b;
+  border-width: 1px;
+  border-radius: 20px;
+}
+
+.mycheck {
+  cursor: pointer;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  width: 30px;
+  height: 30px;
+  appearance: none;
+  border: 2px solid #000000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.mycheck:checked {
+  background-color: rgb(95, 238, 76);
+}
+
+.mycheck:focus {
+  border-color: rgb(80, 67, 250);
+}
+
+.mycheck:disabled {
+  background-color: rgb(198, 198, 198);
+  background-image: none;
+}
+
+.mycheck:disabled:checked {
+  background-color: rgb(198, 198, 198);
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+
+/* no lo vamos a nececitas por ahora */
+
+/* @media screen and (max-width: 768px) {
+  form {
+    max-width: fit-content;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: none;
+    text-align: left; 
+    width: 100%;
+    box-sizing: content-box;
+    box-shadow: none;
+    position: relative;
+  }
+} */

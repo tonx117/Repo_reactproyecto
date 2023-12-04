@@ -1,45 +1,48 @@
 import "../public/css/formulario.css";
 import { Navbar } from "../components/Navbar.jsx";
 import { Link } from "react-router-dom";
-import safety from "../public/images/safety.png"
-import drive from "../public/images/drive.png"
-import guarantee from "../public/images/guarantee.png"
-import formulario1 from "../public/images/formulario1.png"
+import safety from "../public/images/safety.png";
+import drive from "../public/images/drive.png";
+import guarantee from "../public/images/guarantee.png";
+import formulario1 from "../public/images/formulario1.png";
 import { Footer } from "../components/Footer.jsx";
 
 export default function Formularios() {
   return (
     <section>
       <Navbar />
-      <div class="grid-container">
-        <div class="hero-left">
-          <h1 class="hero-title-about">
+      <div className="grid-container">
+        <div className="hero-left">
+          <h1 className="hero-title-about">
             Formulario con <br /> medidas de seguridad e higiene
           </h1>
-          <div class="buttons-about">
-            <Link class="button-about" to="/checklist">
-              Seguridad
+          <div className="buttons-about">
+            <Link className="button-about" to="/checklist">
+              inst. Estudiantil
             </Link>
-            <a class="button-about2" href="/higiene">
-              Higiene
-            </a>
-            <ul class="hero-info">
+            <Link className="button-about2" to="/checklist2">
+              Seg. en planta ind.
+            </Link>
+            <Link className="button-about2" to="/checklist3">
+              Seg. obra cons.
+            </Link>
+            <ul className="hero-info">
               <li>
-              <div className="container-img">
-                <img src={safety} alt="safety-img" />
-              </div>
+                <div className="container-img">
+                  <img src={safety} alt="safety-img" />
+                </div>
                 <h4>100% Seguro</h4>
               </li>
               <li>
-              <div className="container-img">
-                <img src={guarantee} alt="guarante-img" />
-              </div>
+                <div className="container-img">
+                  <img src={guarantee} alt="guarante-img" />
+                </div>
                 <h4>Confiable</h4>
               </li>
               <li>
-              <div className="container-img">
-                <img src={drive} alt="drive-img" />
-              </div>
+                <div className="container-img">
+                  <img src={drive} alt="drive-img" />
+                </div>
                 <h4>
                   Buen <br /> salvaguardado
                 </h4>
@@ -47,13 +50,13 @@ export default function Formularios() {
             </ul>
           </div>
         </div>
-        <div class="hero-right">
-          <div class="container-img">
-            <img src={formulario1} alt="formulario-img" />
+        <div className="hero-right">
+          <div className="container-img">
+            <img className="img-form" src={formulario1} alt="formulario-img" />
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </section>
   );
 }

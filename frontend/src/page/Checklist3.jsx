@@ -103,8 +103,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Las salidas de emergencia están claramente señalizadas y
-                despejadas?
+               ¿Las áreas de trabajo están claramente señalizadas con advertencias de seguridad y rutas de evacuación?
               </label>
               <br />
               <label className="label">
@@ -114,8 +113,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Los extintores están presentes en las ubicaciones designadas y
-                están llenos?
+               ¿Se realizan inspecciones diarias para asegurar que todas las herramientas y equipos estén en buen estado de funcionamiento?
               </label>
               <br />
               <label className="label">
@@ -125,8 +123,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existe un plan de evacuación claramente definido y conocido por
-                todo el personal y estudiantes?
+              ¿Existen controles de acceso para restringir la entrada a áreas peligrosas o en construcción?
               </label>
               <br />
               <label className="label">
@@ -136,8 +133,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realizan inspecciones regulares en busca de posibles fugas
-                de gas u otros riesgos químicos?
+              ¿Las áreas de trabajo cuentan con sistemas de iluminación adecuados para realizar tareas seguras?
               </label>
               <br />
               <label className="label">
@@ -147,8 +143,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se implementan controles de acceso para garantizar que solo
-                personas autorizadas ingresen a áreas restringidas?
+              ¿Se lleva a cabo una inspección regular de los sistemas de andamios para garantizar su estabilidad y seguridad?
               </label>
               <br />
             </div>
@@ -161,8 +156,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿La señalización de seguridad, como salidas de emergencia y
-                rutas de evacuación, está claramente visible y actualizada?
+            ¿Existe un programa de orientación y capacitación en seguridad para todos los trabajadores de la construcción?
               </label>
               <br />
               <label className="label">
@@ -172,8 +166,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Las áreas exteriores, como estacionamientos, están bien
-                iluminadas y seguras?
+             ¿Se implementan medidas de seguridad para prevenir caídas desde alturas, como barandas y redes de seguridad?
               </label>
               <br />
               <label className="label">
@@ -183,8 +176,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existen medidas de seguridad adicionales para proteger equipos
-                y materiales valiosos en la institución?
+              ¿Existe un plan de respuesta a emergencias que incluya evacuación y primeros auxilios?
               </label>
               <br />
               <label className="label">
@@ -194,8 +186,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se lleva a cabo una inspección de los sistemas de fontanería
-                para prevenir riesgos de inundación?
+                ¿El personal de construcción utiliza equipo de protección personal (EPP) adecuado para las tareas específicas?
               </label>
               <br />
               <label className="label">
@@ -205,8 +196,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Los procedimientos de primeros auxilios están claramente
-                establecidos y comunicados?
+                ¿Se realizan inspecciones periódicas de las instalaciones eléctricas temporales utilizadas en la obra?
               </label>
               <br />
             </div>
@@ -219,8 +209,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realizan inspecciones regulares de los sistemas de
-                ascensores y escaleras mecánicas?
+              ¿El personal de seguridad realiza revisiones periódicas de los procedimientos de manejo y almacenamiento de materiales?
               </label>
               <br />
               <label className="label">
@@ -230,8 +219,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿El personal de seguridad realiza patrullas regulares para
-                identificar posibles riesgos?
+               ¿Se implementan medidas para prevenir la exposición a sustancias químicas utilizadas en la construcción?
               </label>
               <br />
               <label className="label">
@@ -241,8 +229,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existe un protocolo para la gestión de situaciones de acoso o
-                bullying?
+                ¿Existen procedimientos específicos para la seguridad en la manipulación de materiales pesados y maquinaria?
               </label>
               <br />
               <label className="label">
@@ -252,8 +239,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se llevan a cabo inspecciones regulares de los sistemas de
-                fontanería y drenaje?
+                ¿Existen medidas para controlar el polvo y la contaminación del aire en la obra?
               </label>
               <br />
               <label className="label">
@@ -263,8 +249,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realiza una verificación regular de los sistemas de control
-                de acceso, como tarjetas magnéticas?
+               ¿Existen procedimientos para el manejo seguro de herramientas manuales y eléctricas?
               </label>
               <br />
             </div>

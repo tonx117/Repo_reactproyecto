@@ -103,8 +103,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Las salidas de emergencia están claramente señalizadas y
-                despejadas?
+                ¿Las áreas de trabajo están claramente señalizadas con advertencias de seguridad y rutas de evacuación?
               </label>
               <br />
               <label className="label">
@@ -114,8 +113,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Los extintores están presentes en las ubicaciones designadas y
-                están llenos?
+               ¿Se realiza un mantenimiento regular de la maquinaria para garantizar su correcto funcionamiento?
               </label>
               <br />
               <label className="label">
@@ -125,8 +123,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existe un plan de evacuación claramente definido y conocido por
-                todo el personal y estudiantes?
+               ¿Existen procedimientos de seguridad para prevenir el acceso no autorizado a áreas con maquinaria peligrosa?
               </label>
               <br />
               <label className="label">
@@ -136,8 +133,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realizan inspecciones regulares en busca de posibles fugas
-                de gas u otros riesgos químicos?
+               ¿Se implementan controles de acceso para restringir la entrada a áreas con maquinaria pesada?
               </label>
               <br />
               <label className="label">
@@ -147,8 +143,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se implementan controles de acceso para garantizar que solo
-                personas autorizadas ingresen a áreas restringidas?
+               ¿Las áreas de almacenamiento de materiales están organizadas para prevenir caídas y accidentes?
               </label>
               <br />
             </div>
@@ -161,8 +156,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿La señalización de seguridad, como salidas de emergencia y
-                rutas de evacuación, está claramente visible y actualizada?
+             ¿Las máquinas industriales están equipadas con sistemas de parada de emergencia claramente identificados?
               </label>
               <br />
               <label className="label">
@@ -172,8 +166,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Las áreas exteriores, como estacionamientos, están bien
-                iluminadas y seguras?
+              ¿Se implementan medidas de seguridad para prevenir el acceso no autorizado a áreas con maquinaria peligrosa?
               </label>
               <br />
               <label className="label">
@@ -183,8 +176,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existen medidas de seguridad adicionales para proteger equipos
-                y materiales valiosos en la institución?
+               ¿Las máquinas están equipadas con protectores y resguardos para prevenir accidentes?
               </label>
               <br />
               <label className="label">
@@ -194,8 +186,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se lleva a cabo una inspección de los sistemas de fontanería
-                para prevenir riesgos de inundación?
+                ¿Existe un protocolo de bloqueo y etiquetado para el mantenimiento seguro de la maquinaria?
               </label>
               <br />
               <label className="label">
@@ -205,8 +196,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Los procedimientos de primeros auxilios están claramente
-                establecidos y comunicados?
+                ¿El personal que opera la maquinaria está equipado con equipo de protección personal (EPP) adecuado?
               </label>
               <br />
             </div>
@@ -219,8 +209,7 @@ export default function Checklist() {
                   value="1"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realizan inspecciones regulares de los sistemas de
-                ascensores y escaleras mecánicas?
+               ¿Se implementan medidas de control de ruido para proteger la salud auditiva de los empleados?
               </label>
               <br />
               <label className="label">
@@ -230,8 +219,7 @@ export default function Checklist() {
                   value="2"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿El personal de seguridad realiza patrullas regulares para
-                identificar posibles riesgos?
+               ¿El personal de seguridad realiza inspecciones periódicas para identificar posibles riesgos?
               </label>
               <br />
               <label className="label">
@@ -241,8 +229,7 @@ export default function Checklist() {
                   value="3"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Existe un protocolo para la gestión de situaciones de acoso o
-                bullying?
+                ¿Se llevan a cabo evaluaciones de ruido en áreas donde se opera maquinaria para proteger la salud auditiva de los empleados?
               </label>
               <br />
               <label className="label">
@@ -252,8 +239,7 @@ export default function Checklist() {
                   value="4"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se llevan a cabo inspecciones regulares de los sistemas de
-                fontanería y drenaje?
+                ¿Existen procedimientos específicos para el manejo seguro de líquidos inflamables utilizados en la maquinaria?
               </label>
               <br />
               <label className="label">
@@ -263,8 +249,7 @@ export default function Checklist() {
                   value="5"
                   onChange={handleCheckboxChange}
                 />{" "}
-                ¿Se realiza una verificación regular de los sistemas de control
-                de acceso, como tarjetas magnéticas?
+                ¿Se implementan medidas de seguridad para prevenir atrapamientos y atragantamientos en la maquinaria?
               </label>
               <br />
             </div>

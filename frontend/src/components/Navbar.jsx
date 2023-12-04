@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext, AuthProvider } from "../context/AuthProvider";
 import { CierreSesion } from "./CierreSesion";
+import { Dropdown, DropdownItem } from "flowbite-react";
 
 export const Navbar = () => {
-  const {state} = useContext(AuthContext)
+  const { state } = useContext(AuthContext);
   const Menu = () => {
     const navId = document.getElementById("nav_menu"),
       ToggleBtnId = document.getElementById("toggle_btn"),
@@ -35,9 +36,6 @@ export const Navbar = () => {
               <Link to={"/"}>Inicio</Link>
             </li>
             <li className="nav_menu_item">
-            {state.logged ? <CierreSesion/> : <Link to={"/account"}>cuenta</Link>}
-            </li>
-            <li className="nav_menu_item">
               <Link to={"/formularios"}>formularios</Link>
             </li>
             <li className="nav_menu_item">
@@ -45,6 +43,26 @@ export const Navbar = () => {
             </li>
             <li className="nav_menu_item">
               <Link to={"/contacto"}>contacto</Link>
+            </li>
+            <li className="nav_menu_item">
+              {state.logged ? (
+                <CierreSesion />
+              ) : (
+                <li>
+                  <Dropdown
+                    label=""
+                    dismissOnClick={false}
+                    renderTrigger={() => <span>Cuenta</span>}
+                  >
+                    <li className="nav_menu_item">
+                      <Link to={"/register"}>registro</Link>
+                    </li>
+                    <li className="nav_menu_item">
+                      <Link to={"/login"}>ingreso</Link>
+                    </li>
+                  </Dropdown>
+                </li>
+              )}
             </li>
           </ul>
         </div>

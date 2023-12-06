@@ -2,17 +2,18 @@ import { Wikinavbar } from "../components/Wikinavbar.jsx";
 import { Footer } from "../components/Footer.jsx";
 import torno from "../public/images/torno.png"
 import "../public/css/metalurgia.css"
+import seguridadtorno from "../public/images/seguridad-torno.png"
 
 export default function Metalurgia() {
   return (
     <div>
       <Wikinavbar />
-      <h1>Seguridad en el torno</h1>
-      <div>
-       <div>
-        <img src={torno} alt="" />
+      <h1 className="h1-metalurgia">Seguridad en el torno</h1>
+      <div className="grid-container-metalurgia">
+       <div className="container-img">
+        <img height="250px" src={torno} alt="" className="imagen-torno"/>
        </div>
-      <div>
+      <div className="container-riesgos">
       <p>
         Los riesgos más comunes asociados al trabajo en el torno son los
         siguientes:
@@ -36,7 +37,7 @@ export default function Metalurgia() {
       <li>Ruido y/o vibraciones.</li>
       </div>
 
-      <div>
+      <div className="container-medidas1">
       <p>
         Una vez detectados los riesgos, se deberán implantar las siguientes
         medidas para trabajar de forma segura en el torno:
@@ -58,7 +59,7 @@ export default function Metalurgia() {
       </li>
       </div>
 
-      <div>
+      <div className="container-medidas2">
       <h2>En cuanto al manejo del torno:</h2>
       <li>
         NUNCA dejar la llave del plato de garras en el plato después de haber
@@ -92,6 +93,11 @@ export default function Metalurgia() {
       </div>
       </div>
       
+      <div className="container-tornoimg">
+        <img src={seguridadtorno} alt="" />
+      </div>
+
+      <div className="container-cuidados">
       <h2>Cuidados generales:</h2>
       <li>
         El torno debe disponer de una seta de emergencia al alcance inmediato
@@ -113,6 +119,7 @@ export default function Metalurgia() {
         Colocar y asegurar las tapas protectoras de la caja de velocidades en su
         posición correcta.
       </li>
+      </div>
       <Footer />
     </div>
   );

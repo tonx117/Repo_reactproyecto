@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap");
+
+.grid-container-metalurgia{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.h1-metalurgia {
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.container-riesgos{
+    margin:30px;
+}
+
+.container-medidas1{
+    margin:30px;
+    margin-bottom: 0;
+}
+
+.container-medidas2{
+    margin:30px;
+    margin-bottom: 0;
+}
+
+.container-cuidados{
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+    max-width: 600px; /* Establece un ancho máximo para el contenedor */
+    margin: 30px auto; /* Centra el contenedor en la página */
+}
+
+h2{
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+}
+
+.container-tornoimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

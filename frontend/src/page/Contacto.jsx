@@ -1,14 +1,16 @@
 import "../public/css/contacto.css";
-import { useState } from "react";
+import Swal from "sweetalert2";
 import axios from "axios";
+import { useState } from "react";
 import { Navbar } from "../components/Navbar.jsx";
 import { Footer } from "../components/Footer.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Contacto = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     Nombre: "",
     Email: "",
-    Telefono: "",
     Asunto: "",
     Mensaje: "",
   });
@@ -24,25 +26,40 @@ const Contacto = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/enviar-correo", formData);
+      const formDataEncoded = new URLSearchParams(Object.entries(formData));
 
-      if (response.status === 200) {
+      const response = await axios.post(
+        "http://localhost:4000/enviar-correo",
+        formDataEncoded,
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+      if (response.status === 201 || response.status === 200) {
         console.log("Correo electrónico enviado:", response.data);
-        // Redirección opcional después de enviar el correo
-        window.location.href = "/contacto";
+        console.log("hola");
+        Swal.fire({
+          icon: "success",
+          title: "Correo enviado correctamente",
+          text: "Correo enviado correctamente",
+        });
+
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       } else {
         console.error("Error al enviar el correo:", response.status);
       }
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
-      // Manejo de errores, podrías mostrar un mensaje al usuario indicando que hubo un problema
     }
   };
-
   return (
     <div>
       <Navbar />
-      <form action="/enviar-correo" method="post">
+      <form method="post" onSubmit={handleSubmit} onChange={handleChange}>
         <div className="contact_form">
           <div className="formulario_contact">
             <h1 className="h1_contact">Formulario de contacto</h1>
@@ -77,19 +94,6 @@ const Contacto = () => {
                   id="Email"
                   required="obligatorio"
                   placeholder="Escribe tu Email"
-                />
-              </p>
-
-              <p className="p_contact">
-                <label htmlFor="telefone" className="colocar_telefono">
-                  Teléfono{" "}
-                </label>
-                <input
-                  className="input_form"
-                  type="tel"
-                  name="Telefono"
-                  id="Telefono"
-                  placeholder="Escribe tu teléfono (opcional)"
                 />
               </p>
 

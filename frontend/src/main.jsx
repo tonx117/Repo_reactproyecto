@@ -28,8 +28,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/Login" element={<Login />} />
           <Route path="/metalurgia" element={<Metalurgia />} />
           <Route path="/electricidad" element={<Electricidad />} />
           <Route path="/generales" element={<Generales />} />
@@ -52,6 +50,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route index element={<Checklist3 />} />
           </Route>
 
+          <Route path="/register" element={<LoginProtect2 />}>
+            <Route index element={<RegisterForm />} />
+          </Route>
+
+          <Route path="/login" element={<LoginProtect2 />}>
+            <Route index element={<Login />} />
+          </Route>
+
           <Route path="/nologin" element={<LoginProtect2 />}>
             <Route index element={<FaltaLogueo />} />
           </Route>
@@ -63,6 +69,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/formularios" element={<LoginProtect />}>
             <Route index element={<Formularios />} />
           </Route>
+          
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider>

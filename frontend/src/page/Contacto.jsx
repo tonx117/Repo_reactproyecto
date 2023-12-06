@@ -67,75 +67,74 @@ const Contacto = () => {
               Escríbenos y en breve los pondremos en contacto contigo
             </h3>
 
-            <form action="submeter-formulario" method="post">
-              <p className="p_contact">
-                <label htmlFor="nombre" className="colocar_nombre">
-                  Nombre
-                  <span className="obligatorio">*</span>
-                </label>
-                <input
-                  className="input_form"
-                  type="text"
-                  name="Nombre"
-                  id="Nombre"
-                  required="obligatorio"
-                  placeholder="Escribe tu nombre"
-                />
-              </p>
+            <p className="p_contact">
+              <label htmlFor="nombre" className="colocar_nombre">
+                Nombre
+                <span className="obligatorio">*</span>
+              </label>
+              <input
+                className="input_form"
+                type="text"
+                name="Nombre"
+                id="Nombre"
+                required
+                placeholder="Escribe tu nombre"
+                onChange={handleChange}
+              />
+            </p>
 
-              <p className="p_contact">
-                <label htmlFor="email" className="colocar_email">
-                  Email <span className="obligatorio">*</span>
-                </label>
-                <input
-                  className="input_form"
-                  type="email"
-                  name="Email"
-                  id="Email"
-                  required="obligatorio"
-                  placeholder="Escribe tu Email"
-                />
-              </p>
+            <p className="p_contact">
+              <label htmlFor="email" className="colocar_email">
+                Email <span className="obligatorio">*</span>
+              </label>
+              <input
+                className="input_form"
+                type="email"
+                name="Email"
+                id="Email"
+                required
+                placeholder="Escribe tu Email"
+                onChange={handleChange}
+              />
+            </p>
 
-              <p className="p_contact">
-                <label htmlFor="asunto" className="colocar_asunto">
-                  Asunto
-                  <span className="obligatorio">*</span>
-                </label>
-                <input
-                  className="input_form"
-                  type="text"
-                  name="Asunto"
-                  id="Asunto"
-                  required="obligatorio"
-                  placeholder="Escribe un asunto"
-                />
-              </p>
+            <p className="p_contact">
+              <label htmlFor="telefono" className="colocar_telefono">
+                Teléfono{" "}
+              </label>
+              <input
+                className="input_form"
+                type="tel"
+                name="Telefono"
+                id="Telefono"
+                placeholder="Escribe tu teléfono (opcional)"
+                onChange={handleChange}
+              />
+            </p>
 
-              <p className="p_contact">
-                <label htmlFor="mensaje" className="colocar_mensaje">
-                  Mensaje
-                  <span className="obligatorio">*</span>
-                </label>
-                <textarea
-                  name="Mensaje"
-                  className="texto_mensaje"
-                  id="Mensaje"
-                  required="obligatorio"
-                  placeholder="Deja aquí tu comentario..."
-                ></textarea>
-              </p>
+            <p className="p_contact">
+              <label htmlFor="asunto" className="colocar_asunto">
+                Asunto
+                <span className="obligatorio">*</span>
+              </label>
+              <input
+                className="input_form"
+                type="text"
+                name="Asunto"
+                id="Asunto"
+                required="obligatorio"
+                placeholder="Escribe un asunto"
+              />
+            </p>
 
-              <button
-                className="button_contact"
-                type="submit"
-                name="enviar_formulario"
-                id="enviar"
-                onClick={handleSubmit}
-              >
-                <p className="p_contact">Enviar</p>
-              </button>
-            </form>
+            <button
+              className="button_contact"
+              type="submit"
+              name="enviar_formulario"
+              id="enviar"
+            >
+              <p className="p_contact">Enviar</p>
+            </button>
 
             <p className="aviso">
               <span className="obligatorio"> * </span>los campos son

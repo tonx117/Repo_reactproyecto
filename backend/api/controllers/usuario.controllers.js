@@ -1,4 +1,5 @@
 import Usuario from "../models/usuario.model.js";
+import { generarJWT } from "../../helpers/generar_jwt.js";
 
 const usuarioctrl = {};
 
@@ -67,11 +68,18 @@ usuarioctrl.store = async (req, res) => {
       contraseña,
     });
 
-    return res.status(201).json(nuevoUsuario);
+    const token = await generarJWT({ usuario: Usuario.id });
+
+
+    return res.status(201).json({
+      message: "Usuario registrado exitosamente",
+      token: token,
+    });
   } catch (error) {
-    return res
-      .status(error.status || 500)
-      .json(error.message || "Error interno del servidor");
+    return res.status(500).json({
+      message: "Hubo un error al registrar el usuario",
+      error: error.message // o cualquier otra información útil del error
+    });
   }
 };
 
@@ -142,8 +150,10 @@ usuarioctrl.login = async (req, res) => {
         message: "Correo o contraseña incorrectos.",
       });
     }
+
+    const token = await generarJWT({ usuario: usuario.id });
     
-    res.json(usuario);
+    return res.status(200).json({ token }); // Devuelve el token en un objeto JSON
   } catch (error) {
     return res.status(500).json({
       message: error.message || "Error interno del servidor",

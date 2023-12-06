@@ -4,7 +4,7 @@ import usuarioctrl from "../controllers/usuario.controllers.js";
 const router = Router();
 
 router.get("/usuario", usuarioctrl.index);
-router.post("/usuario", usuarioctrl.store);
+router.post("/usuario/register", usuarioctrl.store);
 router.get("/usuario/:id", usuarioctrl.show);
 router.put("/usuario/:id", usuarioctrl.update);
 router.delete("/usuario/:id", usuarioctrl.destroy);

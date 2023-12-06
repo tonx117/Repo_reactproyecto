@@ -22,7 +22,7 @@ export const Login = () => {
             <input
               type="text"
               name="correo"
-              id="correo" // Cambié 'user' a 'correo'
+              id="correo" 
               className="main__input"
               placeholder="Correo electrónico"
               value={user.correo}

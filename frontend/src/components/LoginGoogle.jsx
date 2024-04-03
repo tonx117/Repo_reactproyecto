@@ -28,7 +28,7 @@ export default function Logingoogle() {
         "http://localhost:4000/api/usuario/google",
         {
           nombre: userinfo.given_name,
-          apellido: userinfo.family_name || "OMAIGA",
+          apellido: userinfo.family_name || "",
           correo: userinfo.email,
         }
       );
@@ -41,19 +41,14 @@ export default function Logingoogle() {
           register({ token: response.data.token }); // Cambia el estado a logged
           handleSweetAlert("success", "Éxito", "Usuario creado correctamente");
 
-          // Espera 2 segundos antes de redirigir
-          setTimeout(() => {
-            window.location.href = "/"; // Cambia la URL de redirección según tus necesidades
-          }, 2000);
+          // Se crea un token
+          localStorage.setItem("token", response.data.token);
         } else {
           // Ya existe un token, es un inicio de sesión
           login({ token: response.data.token }); // Cambia el estado a logged
           handleSweetAlert("success", "Éxito", "Inicio de sesión exitoso");
-
-          // Espera 2 segundos antes de redirigir
-          setTimeout(() => {
-            window.location.href = "/"; // Cambia la URL de redirección según tus necesidades
-          }, 2000);
+          // Se crea un token
+          localStorage.setItem("token", response.data.token);
         }
       } else {
         handleSweetAlert("error", "Oops...", "Error al iniciar sesión");

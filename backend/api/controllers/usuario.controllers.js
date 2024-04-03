@@ -68,7 +68,7 @@ usuarioctrl.store = async (req, res) => {
       contraseña,
     });
 
-    const token = await generarJWT({ usuario: Usuario.id });
+    const token = await generarJWT({ usuario: nuevoUsuario.id });
 
 
     return res.status(201).json({

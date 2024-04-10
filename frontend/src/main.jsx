@@ -21,6 +21,7 @@ import Generales from "./page/Generales.jsx";
 import Carpinteria from "./page/Carpinteria.jsx";
 import Checklist2 from "./page/Checklist2.jsx";
 import Checklist3 from "./page/Checklist3.jsx";
+import Perfil from "./page/Perfil.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -68,6 +69,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
           <Route path="/formularios" element={<LoginProtect />}>
             <Route index element={<Formularios />} />
+          </Route>
+          <Route path="/perfil" element={<LoginProtect />}>
+            <Route index element={<Perfil />} />
           </Route>
           
         </Routes>

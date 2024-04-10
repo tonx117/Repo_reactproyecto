@@ -46,7 +46,21 @@ export const Navbar = () => {
             </li>
             <ul className="nav_menu_item">
               {state.logged ? (
-                <CierreSesion />
+                
+                <li>
+                  <Dropdown
+                    label=""
+                    dismissOnClick={false}
+                    renderTrigger={() => <span>Cuenta</span>}
+                  >
+                    <li className="nav_menu_item">
+                      <Link to={"/perfil"}>Perfil</Link>
+                    </li>
+                    <li className="nav_menu_item">
+                      <CierreSesion/>
+                    </li>
+                  </Dropdown>
+                </li>
               ) : (
                 <li>
                   <Dropdown

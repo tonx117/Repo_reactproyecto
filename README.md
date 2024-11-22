@@ -2,7 +2,7 @@
 **Una solución integral para la seguridad industrial**  
 
 ## Descripción  
-**Centinela** es una aplicación web desarrollada en Argentina por **Tomás Valdez**, **Diego Jara** e **Iván Pietkiewicz**. Su propósito principal es ofrecer herramientas avanzadas y prácticas para prevenir accidentes en ámbitos industriales. La aplicación combina tecnología de punta, como inteligencia artificial, con principios fundamentales de seguridad e higiene laboral, creando entornos de trabajo más seguros y eficientes.  
+**Centinela** es una aplicación web desarrollada en Argentina por **Tomás Valdez**, **Diego Jara**, **Natali Stevens** e **Alejandro Aquino**. Su propósito principal es ofrecer herramientas avanzadas y prácticas para prevenir accidentes en ámbitos industriales. La aplicación combina tecnología de punta, como inteligencia artificial, con principios fundamentales de seguridad e higiene laboral, creando entornos de trabajo más seguros y eficientes.  
 
 ## Objetivo  
 El objetivo de **Centinela** es ser un aliado estratégico para empresas industriales, ayudándolas a:  
